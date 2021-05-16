@@ -1,0 +1,49 @@
+PODS:
+  - Alamofire (5.4.1)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - BetterSegmentedControl (2.0.1)
+  - ESTabBarController-swift (2.8.0)
+  - FSCalendar (2.8.2)
+  - Masonry (1.1.0)
+  - PanModal (1.2.7)
+  - SkeletonView (1.13.0)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage (~> 4.1)
+  - BetterSegmentedControl
+  - ESTabBarController-swift
+  - FSCalendar
+  - Masonry
+  - PanModal
+  - SkeletonView
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - BetterSegmentedControl
+    - ESTabBarController-swift
+    - FSCalendar
+    - Masonry
+    - PanModal
+    - SkeletonView
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  SkeletonView: 2b14cb767a7da384d17d5d7e1db0d55a6cf9566a
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 967e6fd405972368e5c51075a90c6ce924b24a61
+
+COCOAPODS: 1.10.1
