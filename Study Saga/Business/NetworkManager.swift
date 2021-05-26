@@ -17,6 +17,7 @@ enum NetworkRequestType {
 
 let kServerUrl = "34.95.54.187"
 let kPortNumber = "8050"
+let kDomain = "http://studysaga.online"
 
 let RESPONSE_STATUS_OK: Int = 200
 

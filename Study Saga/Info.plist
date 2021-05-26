@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Study Saga muốn truy cập ứng dụng Lịch để thêm tiết học.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Ứng dụng muốn sử dụng Thư viện ảnh của bạn.</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -47,5 +49,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

@@ -31,10 +31,13 @@ struct Course: Hashable {
     var dateEnd: TimeInterval = 0
     
     var className: String = ""
+    var lessonCount: Int = 0
+    
     var lessons: [Lesson] = []
     var deadlines: [Deadline] = []
     var notifications: [Notification] = []
     var documents: [Document] = []
+    
     var score: CGFloat = 0
     var sesmester: Int = 0
     

@@ -17,6 +17,9 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
+    var signUpInfoLabel: UILabel!
+    var documentManagerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,10 +40,35 @@ class LogInViewController: UIViewController {
         self.signUpButton.addTarget(self,
                                     action: #selector(signUpButtonTapped),
                                     for: .touchUpInside)
+        self.signUpButton.removeFromSuperview()
         
         let tapGesture = UITapGestureRecognizer(target: self,
                                                 action: #selector(viewDidTap))
         self.view.addGestureRecognizer(tapGesture)
+        
+        self.documentManagerButton = UIButton()
+        self.documentManagerButton.setTitle("Quản lý tài liệu học tập", for: .normal)
+        self.documentManagerButton.setTitleColor(.systemBlue, for: .normal)
+        self.documentManagerButton.setTitleColor(.midnightBlue, for: .highlighted)
+        self.view.addSubview(self.documentManagerButton)
+        self.documentManagerButton.mas_makeConstraints { make in
+            make?.bottom.equalTo()(self.view.mas_bottom)?.offset()(-40)
+            make?.leading.equalTo()(self.view.mas_leading)?.offset()(30)
+            make?.trailing.equalTo()(self.view.mas_trailing)?.offset()(-30)
+        }
+        
+        self.signUpInfoLabel = UILabel()
+        self.signUpInfoLabel.font = UIFont.systemFont(ofSize: 13)
+        self.signUpInfoLabel.textColor = .darkGray
+        self.signUpInfoLabel.numberOfLines = 10
+        self.signUpInfoLabel.textAlignment = .center
+        self.signUpInfoLabel.text = "Tính năng đăng ký đã bị khoá. Nếu bạn chưa có tài khoản, vui lòng liên hệ với Phòng Giáo vụ của trường để đăng ký tài khoản."
+        self.view.addSubview(self.signUpInfoLabel)
+        self.signUpInfoLabel.mas_makeConstraints { make in
+            make?.leading.equalTo()(self.view.mas_leading)?.offset()(30)
+            make?.trailing.equalTo()(self.view.mas_trailing)?.offset()(-30)
+            make?.top.equalTo()(self.logInButton.mas_bottom)?.offset()(15)
+        }
     }
     
     @objc func logInTapped() {
@@ -56,7 +84,7 @@ class LogInViewController: UIViewController {
             }
             
             // Show loading
-            AppLoading.showLoading(with: "Đăng nhập...", viewController: self)
+            AppLoading.showLoading(with: "Đăng nhập", viewController: self)
             
             // Send log in request
             AccountManager.manager.logIn(email: email, pwd: pwd) { logInSuccess in

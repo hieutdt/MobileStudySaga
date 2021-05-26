@@ -95,6 +95,9 @@
 		0BEB4AEBAD97A0A0E5552B79 /* Pods_Study_SagaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8862F9A61C80366E857A2C /* Pods_Study_SagaTests.framework */; };
 		0D7C9FD34C4806119FDE0AE0 /* Pods_Study_Saga_Study_SagaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7807A9B270D57AF6195D47B /* Pods_Study_Saga_Study_SagaUITests.framework */; };
 		3A335CC880F263A53E737774 /* Pods_Study_Saga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E8E2AC11D409C9E10B6072 /* Pods_Study_Saga.framework */; };
+		D0251B412659254200A23106 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B402659254200A23106 /* DateExtensions.swift */; };
+		D0251B4326592B4600A23106 /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B4226592B4600A23106 /* MonthYearPicker.swift */; };
+		D0251B452659441F00A23106 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0251B442659441F00A23106 /* EventKit.framework */; };
 		D0445E632647E5F10063AE5F /* SSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0445E622647E5F10063AE5F /* SSFileManager.swift */; };
 		D0EE8C662650F6BB00C2E185 /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0EE8C642650F6BB00C2E185 /* MobileRTCResources.bundle */; };
 		D0EE8C672650F8D600C2E185 /* MobileRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */; };
@@ -229,6 +232,9 @@
 		AC44F6EEB1A7F18ADAF5ADA4 /* Pods-Study Saga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study Saga.release.xcconfig"; path = "Target Support Files/Pods-Study Saga/Pods-Study Saga.release.xcconfig"; sourceTree = "<group>"; };
 		BB8862F9A61C80366E857A2C /* Pods_Study_SagaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_SagaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7807A9B270D57AF6195D47B /* Pods_Study_Saga_Study_SagaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_Saga_Study_SagaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0251B402659254200A23106 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		D0251B4226592B4600A23106 /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPicker.swift; sourceTree = "<group>"; };
+		D0251B442659441F00A23106 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		D0445E622647E5F10063AE5F /* SSFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFileManager.swift; sourceTree = "<group>"; };
 		D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
 		D0EE8C642650F6BB00C2E185 /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A335CC880F263A53E737774 /* Pods_Study_Saga.framework in Frameworks */,
+				D0251B452659441F00A23106 /* EventKit.framework in Frameworks */,
 				D0EE8C672650F8D600C2E185 /* MobileRTC.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +466,7 @@
 				04AF6E3025EA05410092429E /* HomeWeekBar.swift */,
 				042A669025F8B41E0084629F /* ShadowView.swift */,
 				04419FCF262979730017C924 /* InfoBoxView.swift */,
+				D0251B4226592B4600A23106 /* MonthYearPicker.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -563,6 +571,7 @@
 				04894FEB25ECE82C0069C559 /* UIButtonExtensions.swift */,
 				04D648AE25EE42C3007D43AF /* UIWindowExtensions.swift */,
 				0499142E26131D38005E3726 /* UIImageExtensions.swift */,
+				D0251B402659254200A23106 /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -583,6 +592,7 @@
 		A2F7F88E607B7D36E5D6BDC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0251B442659441F00A23106 /* EventKit.framework */,
 				87E8E2AC11D409C9E10B6072 /* Pods_Study_Saga.framework */,
 				C7807A9B270D57AF6195D47B /* Pods_Study_Saga_Study_SagaUITests.framework */,
 				BB8862F9A61C80366E857A2C /* Pods_Study_SagaTests.framework */,
@@ -853,6 +863,7 @@
 				0401C9D22622862B00259402 /* Subject.swift in Sources */,
 				0489500E25ED40F50069C559 /* AccountViewModel.swift in Sources */,
 				04DB50B925E4A8F6004B4C9C /* Study_Saga.xcdatamodeld in Sources */,
+				D0251B4326592B4600A23106 /* MonthYearPicker.swift in Sources */,
 				0499142B2613184F005E3726 /* StateView.swift in Sources */,
 				0489501425ED412F0069C559 /* AccountManager.swift in Sources */,
 				04DB50F225E4A994004B4C9C /* HomeViewModel.swift in Sources */,
@@ -864,6 +875,7 @@
 				04886D2E26244FCD002C733B /* RegisterCourseInfoViewController.swift in Sources */,
 				04AF6E5E25EA1B390092429E /* HomeViewController.swift in Sources */,
 				04DB50F825E4AA96004B4C9C /* UIViewExtensions.swift in Sources */,
+				D0251B412659254200A23106 /* DateExtensions.swift in Sources */,
 				0436296F26084EFB00F639C1 /* AppAlert.swift in Sources */,
 				042EB2D3260DD13500B794FA /* CoursesManager.swift in Sources */,
 				040306B125FB1FFD0058A6CD /* Document.swift in Sources */,

@@ -26,7 +26,7 @@ class CourseTableCell: UITableViewCell {
                 
                 self.courseNameLabel.text = course.subjectName
                 self.teacherNameLabel.text = "\(course.teacherName)"
-                self.lessonLabel.text = "\(course.lessons.count) tiết"
+                self.lessonLabel.text = "12 tiết"
             }
         }
     }
@@ -137,7 +137,7 @@ class CourseTableCell: UITableViewCell {
         
         container.addSubview(lessonIconView)
         lessonIconView.mas_makeConstraints { make in
-            make?.top.equalTo()(teacherIconView.mas_bottom)?.with()?.offset()(10)
+            make?.top.equalTo()(teacherIconView.mas_bottom)?.with()?.offset()(5)
             make?.leading.equalTo()(container.mas_leading)?.with()?.offset()(kHorizontalPadding)
             make?.bottom.equalTo()(container.mas_bottom)?.with()?.offset()(-10)
             make?.size.equalTo()(18)

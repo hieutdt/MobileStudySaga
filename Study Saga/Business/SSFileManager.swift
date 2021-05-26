@@ -22,6 +22,9 @@ final class SSFileManager: NSObject {
         return fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
 
-    
+    func downloadFileWith(urlString: String,
+                          completion: @escaping () -> Void) {
+        
+    }
 }
 

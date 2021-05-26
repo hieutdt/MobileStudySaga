@@ -24,7 +24,7 @@ extension UIButton {
     
 }
 
-extension UIButton {
+extension UIView {
     func applyGradient(colors: [CGColor]) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors

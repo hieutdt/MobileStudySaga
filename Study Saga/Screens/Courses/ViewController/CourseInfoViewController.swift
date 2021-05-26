@@ -119,7 +119,7 @@ class CourseInfoViewController: UIViewController {
         separatorLine4.backgroundColor = separatorLineBackground
         
         joinClassContainer.layer.cornerRadius = 20
-        joinClassContainer.backgroundColor = UIColor(hexString: "#F5F5F6")
+        joinClassContainer.backgroundColor = .appGray
         
         joinClassButton.backgroundColor = .white
         joinClassButton.setGradient()
@@ -300,7 +300,7 @@ class CourseInfoViewController: UIViewController {
                 cell.document = document
                 cell.delegate = self
                 if indexPath.row % 2 == 0 {
-                    cell.setBackground(UIColor(hexString: "#F3F3F4"))
+                    cell.setBackground(UIColor(hexString: "#F0F0F1"))
                 } else {
                     cell.setBackground(.white)
                 }

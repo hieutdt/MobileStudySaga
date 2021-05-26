@@ -11,9 +11,17 @@ import Combine
 import AlamofireImage
 import SkeletonView
 
+
+protocol ScheduleTableCellDelegate: NSObject {
+    func scheduleCellDidSelected(_ cell: ScheduleTableCell)
+}
+
+
 class ScheduleTableCell: UITableViewCell {
     
     static let reuseId = "ScheduleTableCellReuseId"
+    
+    weak var delegate: ScheduleTableCellDelegate? = nil
     
     var model: Lesson? {
         didSet {
@@ -28,12 +36,6 @@ class ScheduleTableCell: UITableViewCell {
                 } else {
                     self.classImageView.image = UIImage(named: "online-interview")
                 }
-                
-//                if model.isOnline {
-//                    self.classImageView.image = UIImage(named: "online-interview")
-//                } else {
-//                    self.classImageView.image = UIImage(named: "school")
-//                }
             }
         }
     }
@@ -113,6 +115,14 @@ class ScheduleTableCell: UITableViewCell {
         return imageview
     }()
     
+    var addToCalendarLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 11)
+        label.textColor = .darkGray
+        label.text = "Đã thêm sự kiện vào Lịch của thiết bị"
+        return label
+    }()
+    
     var isNearestClass: Bool = false {
         didSet {
             if isNearestClass {
@@ -120,18 +130,28 @@ class ScheduleTableCell: UITableViewCell {
                 self.timeLabel.font = .boldSystemFont(ofSize: 15)
                 self.timeLabel.textColor = .black
                 self.classNameLabel.font = .boldSystemFont(ofSize: 14)
+                self.classNameLabel.textColor = UIColor(hexString: "#16A085")
                 self.courseNameLabel.font = .boldSystemFont(ofSize: 15)
-                self.classContainerButton.layer.borderWidth = 2
-                self.classContainerButton.layer.borderColor = UIColor.systemBlue.cgColor
+                self.courseNameLabel.textColor = UIColor(hexString: "#45B39D")
+                self.classContainerButton.setBackgroundColor(color: UIColor(hexString: "#D0ECE7"),
+                                                             forState: .normal)
                 
             } else {
                 self.onLearningIcon.image = UIImage(named: "dot")
                 self.timeLabel.font = .systemFont(ofSize: 14)
                 self.timeLabel.textColor = .gray
                 self.classNameLabel.font = .systemFont(ofSize: 14)
+                self.classNameLabel.textColor = .darkGray
                 self.courseNameLabel.font = .systemFont(ofSize: 15)
-                self.classContainerButton.layer.borderWidth = 0
+                self.courseNameLabel.textColor = .darkGray
+                self.classContainerButton.setBackgroundColor(color: .white, forState: .normal)
             }
+        }
+    }
+    
+    var isAddedToCalendar: Bool = false {
+        didSet {
+            self.addToCalendarLabel.isHidden = !isAddedToCalendar
         }
     }
     
@@ -155,6 +175,7 @@ class ScheduleTableCell: UITableViewCell {
         self.classNameLabel.isSkeletonable = true
         self.teacherNameLabel.isSkeletonable = true
         self.classImageView.isSkeletonable = true
+        self.addToCalendarLabel.isSkeletonable = true
         
         //-------------------------------------------------------
         //  Time Line
@@ -190,12 +211,14 @@ class ScheduleTableCell: UITableViewCell {
         //-------------------------------------------------------
         //  Class Container
         //-------------------------------------------------------
+        classContainerButton.addTarget(self,
+                                       action: #selector(classButtonDidTap),
+                                       for: .touchUpInside)
         self.contentView.addSubview(classContainerButton)
         classContainerButton.mas_makeConstraints { make in
             make?.top.equalTo()(timeLabel.mas_bottom)?.with()?.offset()(10)
             make?.leading.equalTo()(timeLine.mas_trailing)?.with()?.offset()(20)
             make?.trailing.equalTo()(self.contentView.mas_trailing)?.with()?.offset()(-30)
-            make?.bottom.equalTo()(self.contentView.mas_bottom)?.with()?.offset()(-20)
         }
         
         //-------------------------------------------------------
@@ -238,6 +261,20 @@ class ScheduleTableCell: UITableViewCell {
             make?.trailing.equalTo()(classContainerButton.mas_trailing)?.with()?.offset()(-15)
             make?.bottom.equalTo()(classContainerButton.mas_bottom)?.with()?.offset()(-25)
         }
+        
+        //-------------------------------------------------------
+        //  Add to calendar label
+        //-------------------------------------------------------
+        addToCalendarLabel.numberOfLines = 2
+        addToCalendarLabel.textAlignment = .left
+        self.contentView.addSubview(addToCalendarLabel)
+        addToCalendarLabel.mas_makeConstraints { make in
+            make?.top.equalTo()(classContainerButton.mas_bottom)?.offset()(5)
+            make?.bottom.equalTo()(self.contentView.mas_bottom)?.with()?.offset()(-20)
+            make?.leading.equalTo()(timeLine.mas_trailing)?.with()?.offset()(24)
+            make?.trailing.equalTo()(self.contentView.mas_trailing)?.with()?.offset()(-30)
+        }
+        addToCalendarLabel.isHidden = true
     }
     
     override func layoutSubviews() {
@@ -245,5 +282,11 @@ class ScheduleTableCell: UITableViewCell {
         classImageView.layer.cornerRadius = 15
         classImageView.clipsToBounds = true
         classContainerButton.layer.cornerRadius = 25
+    }
+    
+    @objc func classButtonDidTap() {
+        if let delegate = self.delegate {
+            delegate.scheduleCellDidSelected(self)
+        }
     }
 }

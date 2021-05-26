@@ -94,7 +94,7 @@ class NotificationCell: UITableViewCell {
         container.addSubview(dateIcon)
         container.addSubview(dateLabel)
         
-        container.backgroundColor = UIColor(hexString: "#F5F5F6")
+        container.backgroundColor = UIColor.appGray
         container.mas_makeConstraints { make in
             make?.leading.equalTo()(self.mas_leading)?.with()?.offset()(5)
             make?.trailing.equalTo()(self.mas_trailing)?.with()?.offset()(-5)

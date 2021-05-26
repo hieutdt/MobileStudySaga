@@ -45,7 +45,7 @@ class MeetingViewModel: NSObject, ObservableObject {
             param.password = "DG6U1P"
             param.userName = AccountManager.manager.loggedInUser?.name
             
-            // Let MobileRTC handle join meeting.   
+            // Let MobileRTC handle join meeting.
             // This framework will handle the UI.
             meetingService.joinMeeting(with: param)
         }

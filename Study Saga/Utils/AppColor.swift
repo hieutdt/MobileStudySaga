@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     
     static var primary: UIColor {
-        return UIColor(hexString: "#348AC7")
+        return UIColor(hexString: "#1E90FF")
     }
     
     static var primaryHighlighted: UIColor {
@@ -20,6 +20,10 @@ extension UIColor {
     
     static var secondary: UIColor {
         return UIColor(hexString: "#C6503E")
+    }
+    
+    static var appRed: UIColor {
+        return UIColor(hexString: "#ED807E")
     }
     
     static var success: UIColor {
@@ -49,4 +53,9 @@ extension UIColor {
     static var gradientLast: UIColor {
         return UIColor(hexString: "#348AC7")
     }
+    
+    static var appGray: UIColor {
+        return UIColor(hexString: "#EEEEEF")
+    }
 }
+ 

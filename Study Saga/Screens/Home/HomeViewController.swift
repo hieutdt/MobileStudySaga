@@ -41,6 +41,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var openCourseImageView: UIImageView!
     @IBOutlet weak var openCourseDummyButton: UIButton!
     
+    var headerGradient = UIButton()
+    weak var headerGradientHeight: NSLayoutConstraint? = nil
+    
     
     // MARK: - Data Models
     
@@ -108,35 +111,41 @@ class HomeViewController: UIViewController {
     
     private func setUpUI() {
         
+        self.view.backgroundColor = .white
         self.navigationController?.navigationBar.hide()
         
         self.scrollView.delegate = self
         self.scrollView.backgroundColor = .white
-        self.contentView.backgroundColor = .white
+        self.contentView.backgroundColor = .clear
         
         //-----------------------------------------------------------
         //  Header view
         //-----------------------------------------------------------
+        
+        self.nearestClassName.numberOfLines = 2
+        self.nearestClassName.font = .boldSystemFont(ofSize: 28)
         
         self.avatarImageView.layer.cornerRadius = 30
         self.avatarImageView.layer.borderWidth = 3
         self.avatarImageView.layer.borderColor = UIColor(hexString: "#E8E8E9").cgColor
         self.avatarImageView.image = UIImage(named: "avatar")
         
-        self.nearestClassContainer.layer.cornerRadius = 20
-        self.nearestClassContainer.backgroundColor = UIColor(hexString: "#F4F4F5")
+        self.nearestClassContainer.layer.cornerRadius = 25
+        self.nearestClassContainer.backgroundColor = .white
+        self.nearestClassContainer.layer.shadowColor = UIColor.black.cgColor
+        self.nearestClassContainer.layer.shadowOpacity = 0.05
+        self.nearestClassContainer.layer.shadowRadius = 10
+        self.nearestClassContainer.layer.shadowOffset = CGSize(width: 0, height: 4)
         self.nearestClassContainer.hide()
-        
-        self.joinClassButton.setGradient()
-        self.joinClassButton.layer.cornerRadius = 20
-        self.joinClassButton.layer.masksToBounds = true
+    
         self.joinClassButton.addTarget(self,
                                        action: #selector(nearestClassButtonTapped),
                                        for: .touchUpInside)
         self.joinClassButton.setTitleColor(.white, for: .normal)
-        self.joinClassButton.layer.shadowRadius = 3
-        self.joinClassButton.layer.shadowColor = UIColor.black.cgColor
-        self.joinClassButton.layer.shadowOpacity = 0.2
+        self.joinClassButton.setBackgroundColor(color: .appRed, forState: .normal)
+        self.joinClassButton.setBackgroundColor(color: UIColor(hexString: "#A93226"),
+                                                forState: .highlighted)
+        self.joinClassButton.layer.cornerRadius = 20
         
         self.emptyLessonView.show()
         
@@ -167,7 +176,7 @@ class HomeViewController: UIViewController {
         self.openCourseImageView.contentMode = .scaleAspectFill
         
         self.openCourseButton.layer.masksToBounds = true
-        self.openCourseButton.layer.cornerRadius = 15
+        self.openCourseButton.layer.cornerRadius = 25
         self.openCourseButton.backgroundColor = .appBlack
         self.openCourseButton.addTarget(self,
                                         action: #selector(openCourseButtonTapped),
@@ -175,6 +184,20 @@ class HomeViewController: UIViewController {
         
         self.openCourseDummyButton.isUserInteractionEnabled = false
         self.openCourseDummyButton.layer.cornerRadius = 10
+        
+        headerHeight.constant = 100 + getStatusBarHeight()
+        
+        scrollView.addSubview(headerGradient)
+        headerGradient.backgroundColor = .primary
+        scrollView.bringSubviewToFront(contentView)
+        headerGradient.setGradient()
+        headerGradient.mas_makeConstraints { make in
+            make?.leading.equalTo()(scrollView.mas_leading)
+            make?.trailing.equalTo()(scrollView.mas_trailing)
+            make?.top.equalTo()(scrollView.mas_top)
+        }
+        headerGradientHeight = headerGradient.heightAnchor.constraint(equalToConstant: 250)
+        headerGradientHeight?.isActive = true
     }
     
     // MARK: - Data Binding
@@ -214,6 +237,10 @@ class HomeViewController: UIViewController {
                     self.nearestClassName.text = lesson.courseName
                     self.nearestClassTeacherName.text = lesson.lessonName
                     self.nearestClassStart.text = .nearDateFormat(timeInterval: lesson.dateStart)
+                    
+//                    self.nearestClassName.textColor = .white
+//                    self.nearestClassStart.textColor = .lightText
+//                    self.nearestClassTeacherName.textColor = .lightText
                 }
             }
             .store(in: &self.cancellables)
@@ -322,18 +349,29 @@ extension HomeViewController: SkeletonTableViewDataSource {
 extension HomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offset = scrollView.contentOffset
-//        if offset.y < 0 {
-//            let scaleFactor = 1 + (-1 * offset.y / (headerHeight.constant/2.0))
-//            self.headerView.layer.transform = CATransform3DScale(
-//                CATransform3DTranslate(CATransform3DIdentity, 0, offset.y, 0),
-//                scaleFactor,
-//                scaleFactor,
-//                1
-//            )
-//
-//        } else {
-//            self.headerView.layer.transform = CATransform3DIdentity
-//        }
+        let offset = scrollView.contentOffset
+        if offset.y < 0 {
+            let scaleFactor = 1 + (-1 * offset.y / (headerGradientHeight!.constant/2.0))
+            self.headerGradient.layer.transform = CATransform3DScale(
+                CATransform3DTranslate(CATransform3DIdentity, 0, offset.y, 0),
+                scaleFactor,
+                scaleFactor,
+                1
+            )
+
+        } else {
+            self.headerGradient.layer.transform = CATransform3DIdentity
+        }
     }
+}
+
+func getStatusBarHeight() -> CGFloat {
+    var statusBarHeight: CGFloat = 0
+    if #available(iOS 13.0, *) {
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+    } else {
+        statusBarHeight = UIApplication.shared.statusBarFrame.height
+    }
+    return statusBarHeight
 }

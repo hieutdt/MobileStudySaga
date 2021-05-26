@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,11 +45,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HC-u3-Smg">
-                                        <rect key="frame" x="184" y="15" width="200" height="50"/>
+                                        <rect key="frame" x="161.5" y="15" width="222.5" height="50"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="M6Q-xp-5ad"/>
-                                            <constraint firstAttribute="width" constant="200" id="uF9-O6-Lvz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                         <state key="normal" title="Xác nhận đăng ký">
@@ -67,6 +66,7 @@
                                     <constraint firstItem="bIT-X1-u3U" firstAttribute="centerY" secondItem="OdR-5k-04n" secondAttribute="centerY" id="YRA-VK-mFv"/>
                                     <constraint firstItem="7bb-El-eMA" firstAttribute="leading" secondItem="2ol-uq-om6" secondAttribute="leading" constant="30" id="fJO-da-nRx"/>
                                     <constraint firstItem="OdR-5k-04n" firstAttribute="top" secondItem="2ol-uq-om6" secondAttribute="top" constant="20" id="hb6-Ah-bRG"/>
+                                    <constraint firstItem="3HC-u3-Smg" firstAttribute="leading" secondItem="GpB-ET-kPt" secondAttribute="trailing" constant="20" id="jgu-cb-Khj"/>
                                     <constraint firstItem="GpB-ET-kPt" firstAttribute="leading" secondItem="7bb-El-eMA" secondAttribute="trailing" constant="10" id="q9u-kq-Wke"/>
                                     <constraint firstAttribute="trailing" secondItem="3HC-u3-Smg" secondAttribute="trailing" constant="30" id="y4e-Nj-ODJ"/>
                                     <constraint firstItem="3HC-u3-Smg" firstAttribute="top" secondItem="2ol-uq-om6" secondAttribute="top" constant="15" id="ysL-GA-CmQ"/>

@@ -36,9 +36,15 @@ class DeadlineTableCell: UITableViewCell {
     var shadowView = ShadowView()
     var container = UIButton()
     var courseNameLabel = UILabel()
+    var deadlineNameLabel = UILabel()
+    
+    var deadlineImageView = UIImageView()
     var deadlineLabel = UILabel()
+    
     var statusLabel = UILabel()
     var statusImageView = UIImageView()
+    
+    var nextArrow = UIImageView()
     
     let horizontalMargin: CGFloat = 30
     let verticalMargin: CGFloat = 15
@@ -50,8 +56,9 @@ class DeadlineTableCell: UITableViewCell {
     var deadline: Deadline? {
         didSet {
             if let model = self.deadline {
-                self.courseNameLabel.text = model.deadlineName
-                self.deadlineLabel.text = "Hạn chót: " + .fullDateFormat(timeInterval: model.timeEnd)
+                self.courseNameLabel.text = model.courseName
+                self.deadlineNameLabel.text = model.deadlineName
+                self.deadlineLabel.text = .fullDateFormat(timeInterval: model.timeEnd)
                 if model.isSubmitted {
                     self.statusLabel.text = "Đã hoàn thành"
                     self.statusLabel.textColor = .success
@@ -76,14 +83,22 @@ class DeadlineTableCell: UITableViewCell {
         self.backgroundColor = .clear
         self.isUserInteractionEnabled = true
         self.contentView.isUserInteractionEnabled = true
+        self.deadlineImageView.isSkeletonable = true
         
         self.contentView.addSubview(shadowView)
         
         self.contentView.addSubview(container)
+        
         container.addSubview(courseNameLabel)
+        container.addSubview(deadlineNameLabel)
+        
+        container.addSubview(deadlineImageView)
         container.addSubview(deadlineLabel)
+        
         container.addSubview(statusImageView)
         container.addSubview(statusLabel)
+        
+        container.addSubview(nextArrow)
         
         // Activate skeleton
         courseNameLabel.isSkeletonable = true
@@ -101,8 +116,8 @@ class DeadlineTableCell: UITableViewCell {
         shadowView.hide()
         
         // Container
-        container.backgroundColor = .lightGray
-        container.setBackgroundColor(color: UIColor(hexString: "#F3F3F4"), forState: .normal)
+        container.backgroundColor = .white
+        container.setBackgroundColor(color: UIColor(hexString: "#F7F7F7"), forState: .normal)
         container.setBackgroundColor(color: UIColor(hexString: "#E4E4E5"), forState: .highlighted)
         container.layer.masksToBounds = true
         container.layer.cornerRadius = 20
@@ -125,24 +140,45 @@ class DeadlineTableCell: UITableViewCell {
             make?.trailing.equalTo()(container.mas_trailing)?.with()?.offset()(-horizontalMargin)
         }
         
+        // Deadline name label
+        deadlineNameLabel.textColor = .black
+        deadlineNameLabel.font = .systemFont(ofSize: 15)
+        deadlineNameLabel.textAlignment = .left
+        deadlineNameLabel.isUserInteractionEnabled = false
+        deadlineNameLabel.mas_makeConstraints { make in
+            make?.top.equalTo()(courseNameLabel.mas_bottom)?.offset()(5)
+            make?.leading.equalTo()(container.mas_leading)?.with()?.offset()(horizontalMargin)
+            make?.trailing.equalTo()(container.mas_trailing)?.with()?.offset()(-horizontalMargin)
+        }
+        
+        // Deadline icon image view
+        deadlineImageView.image = UIImage(named: "time")
+        deadlineImageView.backgroundColor = .clear
+        deadlineImageView.contentMode = .scaleAspectFit
+        deadlineImageView.mas_makeConstraints { make in
+            make?.top.equalTo()(deadlineNameLabel.mas_bottom)?.offset()(5)
+            make?.size.equalTo()(13)
+            make?.leading.equalTo()(container.mas_leading)?.with()?.offset()(horizontalMargin)
+        }
+        
         // Deadline date label
         deadlineLabel.textColor = .gray
         deadlineLabel.font = .systemFont(ofSize: 13)
         deadlineLabel.textAlignment = .left
         deadlineLabel.isUserInteractionEnabled = false
         deadlineLabel.mas_makeConstraints { make in
-            make?.leading.equalTo()(container.mas_leading)?.with()?.offset()(horizontalMargin)
+            make?.leading.equalTo()(deadlineImageView.mas_trailing)?.offset()(10)
             make?.trailing.equalTo()(container.mas_trailing)?.with()?.offset()(-horizontalMargin)
-            make?.top.equalTo()(courseNameLabel.mas_bottom)?.with()?.offset()(5)
+            make?.centerY.equalTo()(deadlineImageView.mas_centerY)
         }
         
         // Status image icon
         statusImageView.isUserInteractionEnabled = false
         statusImageView.mas_makeConstraints { make in
             make?.leading.equalTo()(container.mas_leading)?.with()?.offset()(horizontalMargin)
-            make?.size.equalTo()(20)
+            make?.size.equalTo()(13)
             make?.bottom.equalTo()(container.mas_bottom)?.with()?.offset()(-verticalMargin)
-            make?.top.equalTo()(deadlineLabel.mas_bottom)?.with()?.offset()(5)
+            make?.top.equalTo()(deadlineImageView.mas_bottom)?.with()?.offset()(5)
         }
                 
         // Status label
@@ -152,6 +188,14 @@ class DeadlineTableCell: UITableViewCell {
             make?.leading.equalTo()(statusImageView.mas_trailing)?.with()?.offset()(10)
             make?.trailing.equalTo()(container.mas_trailing)?.with()?.offset()(-horizontalMargin)
             make?.centerY.equalTo()(statusImageView.mas_centerY)
+        }
+        
+        // Next Arrow
+        nextArrow.image = UIImage(named: "right_arrow")
+        nextArrow.mas_makeConstraints { make in
+            make?.size.equalTo()(12)
+            make?.centerY.equalTo()(container.mas_centerY)
+            make?.trailing.equalTo()(container.mas_trailing)?.offset()(-20)
         }
     }
     

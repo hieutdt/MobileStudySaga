@@ -53,13 +53,8 @@ class AccountViewController: UIViewController {
         self.userNameLabel.textColor = .white
         self.userEmailLabel.textColor = .lightText
         
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.gradientFirst.cgColor, UIColor.gradientLast.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
-        gradientLayer.frame = self.headerContainer.bounds
-        self.headerContainer.layer.insertSublayer(gradientLayer, at: 0)
-        
+
+        self.headerContainer.backgroundColor = .primary
         self.headerContainer.layer.masksToBounds = false
         self.headerContainer.layer.shadowColor = UIColor.black.cgColor
         self.headerContainer.layer.shadowRadius = 5

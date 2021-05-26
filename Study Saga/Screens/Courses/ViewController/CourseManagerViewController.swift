@@ -67,17 +67,12 @@ class CourseManagerViewController: UIViewController {
         }
         emptyCoursesView.hide()
         
-        let layer = CAGradientLayer()
-        layer.frame = headerView.bounds
-        layer.startPoint = CGPoint(x: 0, y: 0)
-        layer.endPoint = CGPoint(x: 1, y: 0)
-        layer.colors = [UIColor.gradientFirst.cgColor, UIColor.gradientLast.cgColor]
-        headerView.layer.insertSublayer(layer, at: 0)
+        self.view.bringSubviewToFront(headerView)
+        headerView.backgroundColor = .primary
         headerView.layer.masksToBounds = false
         headerView.layer.shadowColor = UIColor.black.cgColor
-        headerView.layer.shadowOpacity = 0.05
+        headerView.layer.shadowOpacity = 0.2
         headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.view.bringSubviewToFront(headerView)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -125,7 +120,7 @@ extension CourseManagerViewController: UITableViewDelegate {
         
         let course = self.viewModel.courses[indexPath.item]
         
-        AppLoading.showLoading(with: "Đang tải ...", viewController: self)
+        AppLoading.showLoading(with: "Đang tải", viewController: self)
         
         CoursesManager.manager.getCourseInfo(id: course.courseId) { course in
             

@@ -33,6 +33,12 @@ class AppLoading: NSObject {
     static func showSuccess(with text: String? = nil,
                             viewController: UIViewController) {
         
+        SVProgressHUD.setForegroundColor(.primary)
+        SVProgressHUD.setRingThickness(3)
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultAnimationType(.native)
+        SVProgressHUD.setContainerView(viewController.view)
+        
         SVProgressHUD.showSuccess(withStatus: text)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -42,6 +48,12 @@ class AppLoading: NSObject {
     
     static func showFailed(with text: String? = nil,
                            viewController: UIViewController) {
+        
+        SVProgressHUD.setForegroundColor(.primary)
+        SVProgressHUD.setRingThickness(3)
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultAnimationType(.native)
+        SVProgressHUD.setContainerView(viewController.view)
         
         SVProgressHUD.showError(withStatus: text)
         

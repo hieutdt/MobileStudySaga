@@ -27,9 +27,9 @@ class EmptyDeadlinesView: UIView {
     var label: UILabel = {
         var lbl = UILabel()
         lbl.textColor = .darkGray
-        lbl.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
+        lbl.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
         lbl.textAlignment = .center
-        lbl.numberOfLines = 3
+        lbl.numberOfLines = 10
         return lbl
     }()
     
@@ -46,7 +46,7 @@ class EmptyDeadlinesView: UIView {
         imageView.mas_makeConstraints { make in
             make?.leading.equalTo()(self.mas_leading)?.with()?.offset()(20)
             make?.centerY.equalTo()(self.mas_centerY)
-            make?.size.equalTo()(150)
+            make?.size.equalTo()(120)
         }
         
         label.mas_makeConstraints { make in
