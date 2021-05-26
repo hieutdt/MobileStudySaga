@@ -65,15 +65,12 @@ class ScheduleViewController: UIViewController {
         self.timeButton.setTitleColor(.blue, for: .highlighted)
         self.timeButton.setTitleColor(.lightText, for: .normal)
         
-        tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 250
         tableView.isSkeletonable = true
         tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
         tableView.allowsSelection = false
-        tableView.tableFooterView = UIView()
         tableView.backgroundColor = .background
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(
             ScheduleTableCell.self,
@@ -147,9 +144,12 @@ class ScheduleViewController: UIViewController {
     }
     
     func fetchData() {
-        tableView.showAnimatedGradientSkeleton()
+        self.tableView.showAnimatedGradientSkeleton()
         self.viewModel.fetchLessons { isSuccess in
-            self.tableView.hideSkeleton()
+            self.tableView.stopSkeletonAnimation()
+            self.view.hideSkeleton()
+            
+            self.tableView.rowHeight = UITableView.automaticDimension
             self.tableView.reloadData()
         }
     }
@@ -232,47 +232,6 @@ class ScheduleViewController: UIViewController {
     }
 }
 
-extension ScheduleViewController: UITableViewDelegate {
-    
-    
-}
-
-extension ScheduleViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.schedules.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: ScheduleTableCell.reuseId
-        ) as? ScheduleTableCell else {
-            fatalError("ScheduleTableCell was not registed.")
-        }
-        
-        let schedule = self.viewModel.schedules[indexPath.row]
-        cell.model = schedule
-        cell.backgroundColor = .clear
-        cell.contentView.backgroundColor = .clear
-        if UserDefaults.standard.integer(forKey: schedule.id) == 1 {
-            cell.isAddedToCalendar = true
-        } else {
-            cell.isAddedToCalendar = false  
-        }
-        cell.delegate = self
-        
-        if indexPath.item == 0 {
-            cell.isNearestClass = true
-        }
-        
-        return cell
-    }
-}
-
 extension ScheduleViewController: ScheduleTableCellDelegate {
     func scheduleCellDidSelected(_ cell: ScheduleTableCell) {
         if let indexPath = self.tableView.indexPath(for: cell) {
@@ -301,13 +260,33 @@ extension ScheduleViewController: ScheduleTableCellDelegate {
 
 extension ScheduleViewController: SkeletonTableViewDataSource {
     
-    func numSections(in collectionSkeletonView: UITableView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.schedules.count
     }
     
-    func collectionSkeletonView(_ skeletonView: UITableView,
-                                numberOfRowsInSection section: Int) -> Int {
-        return 3
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ScheduleTableCell.reuseId
+        ) as? ScheduleTableCell else {
+            fatalError("ScheduleTableCell was not registed.")
+        }
+        
+        let schedule = self.viewModel.schedules[indexPath.row]
+        cell.model = schedule
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
+        if UserDefaults.standard.integer(forKey: schedule.id) == 1 {
+            cell.isAddedToCalendar = true
+        } else {
+            cell.isAddedToCalendar = false
+        }
+        cell.delegate = self
+        
+        if indexPath.item == 0 {
+            cell.isNearestClass = true
+        }
+        
+        return cell
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView,

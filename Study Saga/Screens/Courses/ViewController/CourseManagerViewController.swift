@@ -32,12 +32,15 @@ class CourseManagerViewController: UIViewController {
     
     func fetch() {
         
+        self.tableView.rowHeight = 255
         self.tableView.showAnimatedGradientSkeleton()
         
         // Fetch all user's courses.
         self.viewModel.getCourses { isSuccess in
-            self.tableView.hideSkeleton()
+            self.tableView.stopSkeletonAnimation()
+            self.view.hideSkeleton()
             
+            self.tableView.rowHeight = UITableView.automaticDimension
             if isSuccess {
                 if self.viewModel.courses.isEmpty {
                     self.tableView.hide()
@@ -78,8 +81,6 @@ class CourseManagerViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.isSkeletonable = true
-        tableView.tableFooterView = UIView()
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(
             CourseTableCell.self,
@@ -138,10 +139,12 @@ extension CourseManagerViewController: UITableViewDelegate {
     }
 }
 
-extension CourseManagerViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
+extension CourseManagerViewController: SkeletonTableViewDataSource {
+
+    func collectionSkeletonView(_ skeletonView: UITableView,
+                                cellIdentifierForRowAt indexPath: IndexPath
+    ) -> ReusableCellIdentifier {
+        return CourseTableCell.reuseId
     }
     
     func tableView(_ tableView: UITableView,
@@ -159,23 +162,5 @@ extension CourseManagerViewController: UITableViewDataSource {
         
         cell.model = self.viewModel.courses[indexPath.row]
         return cell
-    }
-}
-
-extension CourseManagerViewController: SkeletonTableViewDataSource {
-
-    func numSections(in collectionSkeletonView: UITableView) -> Int {
-        return 1
-    }
-    
-    func collectionSkeletonView(_ skeletonView: UITableView,
-                                numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-
-    func collectionSkeletonView(_ skeletonView: UITableView,
-                                cellIdentifierForRowAt indexPath: IndexPath
-    ) -> ReusableCellIdentifier {
-        return CourseTableCell.reuseId
     }
 }

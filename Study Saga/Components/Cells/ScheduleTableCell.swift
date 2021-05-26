@@ -270,7 +270,7 @@ class ScheduleTableCell: UITableViewCell {
         self.contentView.addSubview(addToCalendarLabel)
         addToCalendarLabel.mas_makeConstraints { make in
             make?.top.equalTo()(classContainerButton.mas_bottom)?.offset()(5)
-            make?.bottom.equalTo()(self.contentView.mas_bottom)?.with()?.offset()(-20)
+            make?.bottom.equalTo()(self.contentView.mas_bottom)?.with()?.offset()(-10)
             make?.leading.equalTo()(timeLine.mas_trailing)?.with()?.offset()(24)
             make?.trailing.equalTo()(self.contentView.mas_trailing)?.with()?.offset()(-30)
         }

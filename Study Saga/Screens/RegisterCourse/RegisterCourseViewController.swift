@@ -47,10 +47,9 @@ class RegisterCourseViewController: UIViewController {
                     return course
                 }
             
+            self.tableView.rowHeight = UITableView.automaticDimension
             self.tableView.reloadData()
         }
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,15 +69,13 @@ class RegisterCourseViewController: UIViewController {
         
         self.view.isSkeletonable = true
         
-        tableView.delegate = self
+        tableView.rowHeight = 200
         tableView.dataSource = self
         tableView.isSkeletonable = true
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.allowsSelection = false
-        tableView.tableFooterView = UIView()
         tableView.backgroundColor = .white
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.register(
             RegisterCourseTableCell.self,
@@ -126,7 +123,9 @@ class RegisterCourseViewController: UIViewController {
             }
             
             // Hide skeleton and reload table view.
+            self.tableView.stopSkeletonAnimation()
             self.tableView.hideSkeleton()
+            self.tableView.rowHeight = UITableView.automaticDimension
             self.tableView.reloadData()
         }
     }
@@ -153,16 +152,7 @@ class RegisterCourseViewController: UIViewController {
     }
 }
 
-extension RegisterCourseViewController: UITableViewDelegate {
-    
-    
-}
-
-extension RegisterCourseViewController: UITableViewDataSource {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+extension RegisterCourseViewController: SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.courses.count
@@ -181,18 +171,6 @@ extension RegisterCourseViewController: UITableViewDataSource {
             where: { $0.courseId == self.courses[indexPath.row].courseId }
         )
         return cell
-    }
-}
-
-extension RegisterCourseViewController: SkeletonTableViewDataSource {
-    
-    func numSections(in collectionSkeletonView: UITableView) -> Int {
-        return 1
-    }
-    
-    func collectionSkeletonView(_ skeletonView: UITableView,
-                                numberOfRowsInSection section: Int) -> Int {
-        return 10
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView,

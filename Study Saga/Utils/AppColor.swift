@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     
     static var primary: UIColor {
-        return UIColor(hexString: "#1E90FF")
+        return UIColor(hexString: "#3271F6")
     }
     
     static var primaryHighlighted: UIColor {

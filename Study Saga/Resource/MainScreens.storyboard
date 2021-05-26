@@ -437,44 +437,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STUDY SAGA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTf-5e-r0N">
-                                <rect key="frame" x="0.0" y="104" width="428" height="34.666666666666657"/>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
-                                <color key="textColor" systemColor="systemIndigoColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7g-tc-a3C">
-                                <rect key="frame" x="40" y="178.66666666666666" width="348" height="18.333333333333343"/>
-                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MẬT KHẨU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVN-He-6pt">
-                                <rect key="frame" x="40" y="262" width="348" height="18.666666666666686"/>
-                                <fontDescription key="fontDescription" name="NotoSansOriya-Bold" family="Noto Sans Oriya" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2aR-3n-miK" customClass="SSTextField" customModule="Study_Saga" customModuleProvider="target">
-                                <rect key="frame" x="40" y="202" width="348" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2aR-3n-miK" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="30" y="212" width="368" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="C3E-gO-AYf"/>
+                                    <constraint firstAttribute="height" constant="50" id="C3E-gO-AYf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QR2-qs-WZE" customClass="SSTextField" customModule="Study_Saga" customModuleProvider="target">
-                                <rect key="frame" x="40" y="285.66666666666669" width="348" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QR2-qs-WZE" customClass="TweeActiveTextField" customModule="TweeTextField">
+                                <rect key="frame" x="30" y="282" width="368" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="PBK-Gt-oe7"/>
+                                    <constraint firstAttribute="height" constant="50" id="PBK-Gt-oe7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyA-4K-rae">
-                                <rect key="frame" x="40" y="345.66666666666669" width="348" height="50"/>
+                                <rect key="frame" x="30" y="362" width="368" height="50"/>
                                 <color key="backgroundColor" red="0.92941176470588238" green="0.50196078431372548" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="clw-e4-quT"/>
@@ -497,33 +479,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Đăng ký ngay"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-pD-nfq">
+                                <rect key="frame" x="30" y="94" width="368" height="42"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng đăng nhập để tiếp tục!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJS-xW-Hah">
+                                <rect key="frame" x="30" y="141" width="368" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XHe-E6-FWM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QTf-5e-r0N" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" id="0US-DI-v8m"/>
-                            <constraint firstItem="QR2-qs-WZE" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="40" id="0Za-Ry-Sky"/>
+                            <constraint firstItem="QR2-qs-WZE" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="30" id="0Za-Ry-Sky"/>
                             <constraint firstItem="SQM-ZS-Y44" firstAttribute="top" secondItem="S7Z-EG-J5n" secondAttribute="bottom" constant="3" id="4jI-Sa-pEa"/>
                             <constraint firstItem="SQM-ZS-Y44" firstAttribute="centerX" secondItem="S7Z-EG-J5n" secondAttribute="centerX" id="97N-aQ-HjL"/>
-                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="2aR-3n-miK" secondAttribute="trailing" constant="40" id="9uN-68-CYD"/>
+                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="2aR-3n-miK" secondAttribute="trailing" constant="30" id="9uN-68-CYD"/>
                             <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="S7Z-EG-J5n" secondAttribute="trailing" constant="10" id="Bi1-S7-zIv"/>
-                            <constraint firstItem="TVN-He-6pt" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="40" id="D8V-vG-PU0"/>
-                            <constraint firstItem="2aR-3n-miK" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="40" id="DCa-iJ-U16"/>
-                            <constraint firstItem="ZyA-4K-rae" firstAttribute="top" secondItem="QR2-qs-WZE" secondAttribute="bottom" constant="20" id="I0f-vo-SQa"/>
-                            <constraint firstItem="ZyA-4K-rae" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="40" id="IDW-xq-Nto"/>
+                            <constraint firstItem="2aR-3n-miK" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="30" id="DCa-iJ-U16"/>
+                            <constraint firstItem="QR2-qs-WZE" firstAttribute="top" secondItem="2aR-3n-miK" secondAttribute="bottom" constant="20" id="FaY-pi-9bX"/>
+                            <constraint firstItem="sfX-pD-nfq" firstAttribute="top" secondItem="XHe-E6-FWM" secondAttribute="top" constant="50" id="HGw-OF-GNp"/>
+                            <constraint firstItem="ZyA-4K-rae" firstAttribute="top" secondItem="QR2-qs-WZE" secondAttribute="bottom" constant="30" id="I0f-vo-SQa"/>
+                            <constraint firstItem="FJS-xW-Hah" firstAttribute="top" secondItem="sfX-pD-nfq" secondAttribute="bottom" constant="5" id="IBJ-K8-bSP"/>
+                            <constraint firstItem="ZyA-4K-rae" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="30" id="IDW-xq-Nto"/>
                             <constraint firstItem="S7Z-EG-J5n" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="10" id="JbE-IM-Kfi"/>
-                            <constraint firstItem="2aR-3n-miK" firstAttribute="top" secondItem="W7g-tc-a3C" secondAttribute="bottom" constant="5" id="Poi-A7-32d"/>
-                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="W7g-tc-a3C" secondAttribute="trailing" constant="40" id="Qt6-pT-Zfz"/>
-                            <constraint firstItem="QTf-5e-r0N" firstAttribute="top" secondItem="XHe-E6-FWM" secondAttribute="top" constant="60" id="RGB-hd-vdu"/>
-                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="QTf-5e-r0N" secondAttribute="trailing" id="WMJ-rM-Dve"/>
-                            <constraint firstItem="QR2-qs-WZE" firstAttribute="top" secondItem="TVN-He-6pt" secondAttribute="bottom" constant="5" id="Yle-p6-bIV"/>
-                            <constraint firstItem="W7g-tc-a3C" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="40" id="bGZ-Z4-Hic"/>
+                            <constraint firstItem="2aR-3n-miK" firstAttribute="top" secondItem="FJS-xW-Hah" secondAttribute="bottom" constant="50" id="ORD-7c-sx9"/>
+                            <constraint firstItem="sfX-pD-nfq" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="30" id="Q0Q-tK-vEN"/>
+                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="FJS-xW-Hah" secondAttribute="trailing" constant="30" id="UM8-SG-zOY"/>
                             <constraint firstItem="XHe-E6-FWM" firstAttribute="bottom" secondItem="SQM-ZS-Y44" secondAttribute="bottom" constant="20" id="dzn-wp-CW0"/>
-                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="ZyA-4K-rae" secondAttribute="trailing" constant="40" id="jJI-F0-iB8"/>
-                            <constraint firstItem="TVN-He-6pt" firstAttribute="top" secondItem="2aR-3n-miK" secondAttribute="bottom" constant="20" id="kFO-Dy-TgY"/>
-                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="TVN-He-6pt" secondAttribute="trailing" constant="40" id="l99-HT-qVG"/>
-                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="QR2-qs-WZE" secondAttribute="trailing" constant="40" id="sdL-mn-Tfy"/>
-                            <constraint firstItem="W7g-tc-a3C" firstAttribute="top" secondItem="QTf-5e-r0N" secondAttribute="bottom" constant="40" id="ycw-qw-oAS"/>
+                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="sfX-pD-nfq" secondAttribute="trailing" constant="30" id="et5-Qh-Fxn"/>
+                            <constraint firstItem="FJS-xW-Hah" firstAttribute="leading" secondItem="XHe-E6-FWM" secondAttribute="leading" constant="30" id="gpf-aB-xu8"/>
+                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="ZyA-4K-rae" secondAttribute="trailing" constant="30" id="jJI-F0-iB8"/>
+                            <constraint firstItem="XHe-E6-FWM" firstAttribute="trailing" secondItem="QR2-qs-WZE" secondAttribute="trailing" constant="30" id="sdL-mn-Tfy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -535,7 +526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xV8-4I-mza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740.5797101449277" y="59.598214285714285"/>
+            <point key="canvasLocation" x="1739.7196261682243" y="58.963282937365015"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="x9i-4C-Ggq">
@@ -779,6 +770,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0JS-ho-Zsv"/>
                                 </constraints>
+                                <color key="textColor" red="0.19607843137254902" green="0.44313725490196076" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>

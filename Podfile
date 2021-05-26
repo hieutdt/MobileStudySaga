@@ -13,8 +13,7 @@ target 'Study Saga' do
   pod "ESTabBarController-swift"
   pod "Masonry"
   pod "SkeletonView"
-  pod "FSCalendar"
-  pod "BetterSegmentedControl"
+  pod 'TweeTextField'
   
   target 'Study SagaTests' do
     inherit! :search_paths

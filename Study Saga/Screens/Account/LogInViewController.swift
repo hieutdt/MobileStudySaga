@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 import Combine
-
+import TweeTextField
 
 class LogInViewController: UIViewController {
     
-    @IBOutlet weak var emailTextField: SSTextField!
-    @IBOutlet weak var passwordTextField: SSTextField!
+    @IBOutlet weak var emailTextField: TweeActiveTextField!
+    @IBOutlet weak var passwordTextField: TweeActiveTextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -27,7 +27,28 @@ class LogInViewController: UIViewController {
     }
     
     private func setUpUI() {
-        self.logInButton.layer.cornerRadius = 10
+        
+        emailTextField.placeholderColor = .lightGray
+        emailTextField.textColor = .darkText
+        emailTextField.tweePlaceholder = "Địa chỉ Email"
+        emailTextField.placeholderDuration = 0.25
+        emailTextField.activeLineColor = .primary
+        emailTextField.lineColor = .lightGray
+        emailTextField.activeLineWidth = 3
+        emailTextField.animationDuration = 0.3
+        emailTextField.placeholder = ""
+        
+        passwordTextField.placeholderColor = .lightGray
+        passwordTextField.textColor = .darkText
+        passwordTextField.tweePlaceholder = "Mật khẩu"
+        passwordTextField.placeholderDuration = 0.25
+        passwordTextField.activeLineColor = .primary
+        passwordTextField.lineColor = .lightGray
+        passwordTextField.activeLineWidth = 3
+        passwordTextField.animationDuration = 0.3
+        passwordTextField.placeholder = ""
+        
+        self.logInButton.layer.cornerRadius = 20
         self.logInButton.setTitleColor(.white, for: .normal)
         self.logInButton.setTitleColor(.selectedBackground, for: .selected)
         self.logInButton.addTarget(self,

@@ -33,6 +33,7 @@ class RegisterHistoryViewController: UIViewController {
         
         self.view.backgroundColor = .background
         
+        self.tableView.rowHeight = 200
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(
@@ -68,27 +69,32 @@ class RegisterHistoryViewController: UIViewController {
                 
                 RegisterCourseManager.manager.coursesDidChanged = false
                 
-                if let error = error {
+                if let _ = error {
+                    AppLoading.showFailed(with: "Tải dữ liệu thất bại. Vui lòng thử lại sau!",
+                                          viewController: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
                     
                 } else {
                     self.courses = courses
                 }
                 
-                self.tableView.hideSkeleton()
+                self.tableView.stopSkeletonAnimation()
+                self.view.hideSkeleton()
+                
+                self.tableView.rowHeight = UITableView.automaticDimension
                 self.tableView.reloadData()
             }
         } else {
             self.courses = RegisterCourseManager.manager.registedCourses
+            self.tableView.rowHeight = UITableView.automaticDimension
             self.tableView.reloadData()
         }
     }
 }
 
-extension RegisterHistoryViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+extension RegisterHistoryViewController: SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.courses.count
@@ -106,17 +112,6 @@ extension RegisterHistoryViewController: UITableViewDataSource {
         cell.delegate = self
         
         return cell
-    }
-}
-
-extension RegisterHistoryViewController: SkeletonTableViewDataSource {
-    
-    func numSections(in collectionSkeletonView: UITableView) -> Int {
-        return 1
-    }
-    
-    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView,

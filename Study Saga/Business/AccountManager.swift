@@ -45,7 +45,7 @@ class AccountManager: NSObject, ObservableObject {
                pwd: String,
                completion: @escaping (Bool) -> Void) {
         
-        let logInUrl = "\(kDomain)/api/oauth/login"
+        let logInUrl = "http://\(kServerUrl):\(kPortNumber)/api/oauth/login"
         
         let params = [
             "email": email,
