@@ -127,7 +127,7 @@ extension CourseManagerViewController: UITableViewDelegate {
             
             AppLoading.hideLoading()
             
-            if let course = course {
+            if let course = course, course.courseId.lenght > 0 {
                 let vc = UIStoryboard.courses.viewController(CourseInfoViewController.self)
                 vc.course = course
                 self.navigationController?.pushViewController(vc, animated: true)

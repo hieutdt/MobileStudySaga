@@ -45,7 +45,7 @@ class AccountManager: NSObject, ObservableObject {
                pwd: String,
                completion: @escaping (Bool) -> Void) {
         
-        let logInUrl = "http://\(kServerUrl):\(kPortNumber)/api/oauth/login"
+        let logInUrl = "\(kDomain)/api/oauth/login"
         
         let params = [
             "email": email,
@@ -89,7 +89,7 @@ class AccountManager: NSObject, ObservableObject {
         if let cachingToken = self.cachingToken, cachingToken.count > 0 {
             
             // Send check validate get request
-            let url = "http://\(kServerUrl):\(kPortNumber)/api/account/validationToken"
+            let url = "\(kDomain)/api/account/validationToken"
             let headers: HTTPHeaders = [
                 "Authorization": "Bearer \(cachingToken)",
                 "Accept": "*/*"
@@ -142,7 +142,7 @@ class AccountManager: NSObject, ObservableObject {
         }
         
         // Send GET user info request
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/account/"
+        let url = "\(kDomain)/api/account/"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(cachingToken)",
             "Accept": "*/*"
@@ -190,7 +190,7 @@ class AccountManager: NSObject, ObservableObject {
         )
         
         // Send POST request to update user's avatar.
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/account/"
+        let url = "\(kDomain)/api/account/"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(cachingToken)",
             "Accept": "*/*"

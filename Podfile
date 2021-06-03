@@ -14,6 +14,7 @@ target 'Study Saga' do
   pod "Masonry"
   pod "SkeletonView"
   pod 'TweeTextField'
+  pod 'FileKit'
   
   target 'Study SagaTests' do
     inherit! :search_paths

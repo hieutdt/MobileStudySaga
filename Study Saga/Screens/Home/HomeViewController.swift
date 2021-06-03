@@ -111,7 +111,7 @@ class HomeViewController: UIViewController {
         
         let numberOfRows = min(kMaxDeadlinesToShow, self.viewModel.deadlines.count)
         self.deadlinesTableViewHeight.constant = CGFloat(
-            numberOfRows * 105 + (numberOfRows - 1) * 2
+            numberOfRows * 130 + (numberOfRows - 1) * 2
         )
     }
     
@@ -289,7 +289,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 105
+        return 130
     }
 }
 
@@ -356,18 +356,20 @@ extension HomeViewController: SkeletonTableViewDataSource {
 extension HomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset
-        if offset.y < 0 {
-            let scaleFactor = 1 + (-1 * offset.y / (headerGradientHeight!.constant/2.0))
-            self.headerGradient.layer.transform = CATransform3DScale(
-                CATransform3DTranslate(CATransform3DIdentity, 0, offset.y, 0),
-                scaleFactor,
-                scaleFactor,
-                1
-            )
-
-        } else {
-            self.headerGradient.layer.transform = CATransform3DIdentity
+        if scrollView == self.scrollView {
+            let offset = scrollView.contentOffset
+            if offset.y < 0 {
+                let scaleFactor = 1 + (-1 * offset.y / (headerGradientHeight!.constant/2.0))
+                self.headerGradient.layer.transform = CATransform3DScale(
+                    CATransform3DTranslate(CATransform3DIdentity, 0, offset.y, 0),
+                    scaleFactor,
+                    scaleFactor,
+                    1
+                )
+                
+            } else {
+                self.headerGradient.layer.transform = CATransform3DIdentity
+            }
         }
     }
 }

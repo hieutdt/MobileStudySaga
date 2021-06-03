@@ -52,6 +52,7 @@ extension Deadline {
         self.timeStart = TimeInterval(json.stringValueForKey("timeStart")) ?? 0
         self.timeEnd = TimeInterval(json.stringValueForKey("timeEnd")) ?? 0
         self.courseId = json.stringValueForKey("courseID")
+        self.courseName = json.stringValueForKey("courseName")
     }
 }
     

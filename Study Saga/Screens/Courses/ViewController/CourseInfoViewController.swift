@@ -39,22 +39,17 @@ class CourseInfoViewController: UIViewController {
     @IBOutlet weak var joinClassEmptyView: EmptyDeadlinesView!
     @IBOutlet weak var joinClassStatusLabel: UILabel!
     
-    
-    @IBOutlet weak var notificationTableView: UITableView!
-    @IBOutlet weak var notificationTableHeight: NSLayoutConstraint!
     @IBOutlet weak var documentTableView: UITableView!
     @IBOutlet weak var documentTableHeight: NSLayoutConstraint!
     
     @IBOutlet weak var deadlineTableView: UITableView!
     @IBOutlet weak var deadlineTableHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var emptyNotiLabel: UILabel!
     @IBOutlet weak var emptyDocumentLabel: UILabel!
     @IBOutlet weak var emptyDeadlineLabel: UILabel!
     
     @IBOutlet weak var separatorLine1: UIView!
     @IBOutlet weak var separatorLine2: UIView!
-    @IBOutlet weak var separatorLine3: UIView!
     @IBOutlet weak var separatorLine4: UIView!
     
     let separatorLineBackground = UIColor(hexString: "#E7E7E8")
@@ -85,8 +80,6 @@ class CourseInfoViewController: UIViewController {
         super.viewDidLoad()
         
         self.setUpUI()
-        
-        self.createNotiDiffableDataSource()
         self.createDocumentDiffableDataSource()
         self.dataBinding()
     }
@@ -115,7 +108,6 @@ class CourseInfoViewController: UIViewController {
         
         separatorLine1.backgroundColor = separatorLineBackground
         separatorLine2.backgroundColor = separatorLineBackground
-        separatorLine3.backgroundColor = separatorLineBackground
         separatorLine4.backgroundColor = separatorLineBackground
         
         joinClassContainer.layer.cornerRadius = 20
@@ -145,24 +137,11 @@ class CourseInfoViewController: UIViewController {
         joinClassEmptyView.imageView.tintColor = .darkGray
         joinClassEmptyView.hide()
         
-        emptyNotiLabel.textColor = .darkGray
-        emptyNotiLabel.hide()
-        
         emptyDocumentLabel.textColor = .darkGray
         emptyDocumentLabel.hide()
         
         emptyDeadlineLabel.textColor = .darkGray
         emptyDeadlineLabel.hide()
-        
-        notificationTableView.delegate = self
-        notificationTableView.separatorStyle = .none
-        notificationTableView.backgroundColor = .clear
-        notificationTableView.allowsSelection = false
-        notificationTableView.tableFooterView = UIView()
-        notificationTableView.register(
-            NotificationCell.self,
-            forCellReuseIdentifier: NotificationCell.reuseId
-        )
         
         documentTableView.delegate = self
         documentTableView.backgroundColor = .clear
@@ -229,45 +208,6 @@ class CourseInfoViewController: UIViewController {
         }
         .makeConnectable()
     
-    private func createNotiDiffableDataSource() {
-        
-        // Create diffable datasource
-        let datasource = NotiDataSource(tableView: self.notificationTableView) { [weak self] tableView, indexPath, notification in
-            
-            guard let self = self else {
-                return nil
-            }
-            
-            let notifications = self.viewModel.course.notifications
-            
-            if let noti = notifications.first(where: { $0.id == notification.id }) {
-                guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: NotificationCell.reuseId
-                ) as? NotificationCell else {
-                    return UITableViewCell()
-                }
-                
-                cell.model = noti
-                return cell
-            }
-            
-            return nil
-        }
-        
-        self.notiTableViewDataSource = datasource
-        
-        // Apply initialize snapshot
-        var initializeSnapshot = NotiSnapshot()
-        initializeSnapshot.appendSections([0])
-        initializeSnapshot.appendItems(self.viewModel.course.notifications)
-        datasource.apply(initializeSnapshot, animatingDifferences: false) {
-            // Begin receiving updates
-            self.updateNotiDataSourcePublisher
-                .connect()
-                .store(in: &self.cancellables)
-        }
-    }
-    
     typealias DocumentDataSource = UITableViewDiffableDataSource<Int, Document>
     typealias DocumentSnapshot = NSDiffableDataSourceSnapshot<Int, Document>
     private lazy var updateDocumentDataSourcePublisher = self.viewModel.$course
@@ -329,22 +269,6 @@ class CourseInfoViewController: UIViewController {
     
     private func dataBinding() {
         
-        // Update table view if we have any changes.
-        self.updateNotiDataSourcePublisher
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] snapshot in
-                guard let datasource = self?.notiTableViewDataSource else {
-                    return
-                }
-                
-                datasource.apply(snapshot, animatingDifferences: false) {
-                    // Update table view height
-                    self?.notificationTableHeight.constant
-                        = self?.notificationTableView.contentSize.height ?? 0
-                }
-            }
-            .store(in: &self.cancellables)
-        
         self.updateDocumentDataSourcePublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] snapshot in
@@ -373,11 +297,12 @@ class CourseInfoViewController: UIViewController {
                     }
                     
                     self.courseNameLabel.text = course.className
+                    self.teacherNameLabel.text = course.teacherName
                     
                     if let nextLesson = course.nextLesson() {
                         self.classNameLabel.text = nextLesson.lessonName
-                        self.teacherNameLabel.text = nextLesson.teacherName
                         self.lessonNumberLabel.text = "Tiết \(nextLesson.lessonNumber)"
+                        self.joinClassTeacherName.text = nextLesson.teacherName
                         self.joinClassButton.show()
                         self.joinClassEmptyView.hide()
                         
@@ -400,17 +325,6 @@ class CourseInfoViewController: UIViewController {
                         
                     } else {
                         self.joinClassEmptyView.show()
-                    }
-                    
-                    if course.notifications.isEmpty {
-                        self.emptyNotiLabel.show()
-                        self.notificationTableView.hide()
-                        self.notificationTableHeight.constant = 80
-                    } else {
-                        self.emptyNotiLabel.hide()
-                        self.notificationTableView.show()
-                        self.notificationTableHeight.constant
-                            = self.notificationTableView.contentSize.height
                     }
                     
                     if course.deadlines.isEmpty {

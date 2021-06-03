@@ -70,7 +70,6 @@
 		04AF6E8825EA335A0092429E /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF6E8725EA335A0092429E /* AppColor.swift */; };
 		04B8FF1C25F75CDC0070A212 /* CourseInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8FF1B25F75CDC0070A212 /* CourseInfoViewModel.swift */; };
 		04B8FF2125F75DFA0070A212 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8FF2025F75DFA0070A212 /* Notification.swift */; };
-		04B8FF2625F76E890070A212 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8FF2525F76E890070A212 /* NotificationCell.swift */; };
 		04C1A67625EF3ECC003A7AAA /* ScheduleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1A67525EF3ECC003A7AAA /* ScheduleTableCell.swift */; };
 		04C1A67B25EF7783003A7AAA /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1A67A25EF7783003A7AAA /* ScheduleViewModel.swift */; };
 		04C1A68025EF78D9003A7AAA /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1A67F25EF78D9003A7AAA /* Lesson.swift */; };
@@ -99,6 +98,10 @@
 		D09C7A7B26691A0F0018C280 /* CourseScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7826691A0F0018C280 /* CourseScreens.storyboard */; };
 		D09C7A7C26691A0F0018C280 /* RegisterCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */; };
 		D09C7A7F26691A2B0018C280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7D26691A2B0018C280 /* LaunchScreen.storyboard */; };
+		D09C7A82266928D60018C280 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A81266928D60018C280 /* NotificationViewController.swift */; };
+		D09C7A84266929950018C280 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A83266929950018C280 /* NotificationCell.swift */; };
+		D09C7A86266929BA0018C280 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A85266929BA0018C280 /* NotificationModel.swift */; };
+		D09C7A8826692FFC0018C280 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */; };
 		D0EE8C662650F6BB00C2E185 /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0EE8C642650F6BB00C2E185 /* MobileRTCResources.bundle */; };
 		D0EE8C672650F8D600C2E185 /* MobileRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */; };
 		D0EE8C682650F8D600C2E185 /* MobileRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -199,7 +202,6 @@
 		04AF6E8725EA335A0092429E /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		04B8FF1B25F75CDC0070A212 /* CourseInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoViewModel.swift; sourceTree = "<group>"; };
 		04B8FF2025F75DFA0070A212 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		04B8FF2525F76E890070A212 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		04C1A67525EF3ECC003A7AAA /* ScheduleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableCell.swift; sourceTree = "<group>"; };
 		04C1A67A25EF7783003A7AAA /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		04C1A67F25EF78D9003A7AAA /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
@@ -236,6 +238,10 @@
 		D09C7A7826691A0F0018C280 /* CourseScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CourseScreens.storyboard; path = Storyboard/CourseScreens.storyboard; sourceTree = "<group>"; };
 		D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RegisterCourse.storyboard; path = Storyboard/RegisterCourse.storyboard; sourceTree = "<group>"; };
 		D09C7A7E26691A2B0018C280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Storyboard/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D09C7A81266928D60018C280 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		D09C7A83266929950018C280 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		D09C7A85266929BA0018C280 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
 		D0EE8C642650F6BB00C2E185 /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
 		E309E5041FA8D9CC61ED33EE /* Pods-Study Saga-Study SagaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study Saga-Study SagaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Study Saga-Study SagaUITests/Pods-Study Saga-Study SagaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -450,7 +456,6 @@
 				04C1A67525EF3ECC003A7AAA /* ScheduleTableCell.swift */,
 				04A1C92225F0924400D270A1 /* CourseTableCell.swift */,
 				047832AE25F60B8B001DE828 /* LessonCollectionCell.swift */,
-				04B8FF2525F76E890070A212 /* NotificationCell.swift */,
 				0486516125FA6B0900F28579 /* DocumentTableCell.swift */,
 				049B0E22261DB24400272C05 /* FileLinkTableCell.swift */,
 				048BEBD1261EEC1600D0D99E /* RegisterCourseTableCell.swift */,
@@ -541,6 +546,7 @@
 		04DB50E725E4A935004B4C9C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D09C7A80266928C20018C280 /* Notification */,
 				048574FF26248C2200821BCC /* RegisterCourse */,
 				042A669F25F8BBB60084629F /* OnMeeting */,
 				04503A5225EF36A6007A4A81 /* Courses */,
@@ -598,6 +604,17 @@
 				BB8862F9A61C80366E857A2C /* Pods_Study_SagaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D09C7A80266928C20018C280 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				D09C7A81266928D60018C280 /* NotificationViewController.swift */,
+				D09C7A83266929950018C280 /* NotificationCell.swift */,
+				D09C7A85266929BA0018C280 /* NotificationModel.swift */,
+				D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -847,6 +864,7 @@
 				0481EA3325E65A2A00FA568C /* DictionaryExtensions.swift in Sources */,
 				046659BC26158CC2004499CC /* LessonManager.swift in Sources */,
 				04AF6E6825EA24940092429E /* AppNavigation.swift in Sources */,
+				D09C7A8826692FFC0018C280 /* NotificationViewModel.swift in Sources */,
 				049B0E1F261DA87200272C05 /* DeadlineViewController.swift in Sources */,
 				044FAFDF260DDFD1007B0581 /* EmptyDeadlinesView.swift in Sources */,
 				04AF6E6E25EA275E0092429E /* DeadlineTableCell.swift in Sources */,
@@ -858,6 +876,7 @@
 				0486516225FA6B0900F28579 /* DocumentTableCell.swift in Sources */,
 				0466256726146ACB008E0133 /* StudyResultViewController.swift in Sources */,
 				048574FC262489E800821BCC /* RegisterCourseManager.swift in Sources */,
+				D09C7A84266929950018C280 /* NotificationCell.swift in Sources */,
 				04503A5425EF36B9007A4A81 /* ScheduleViewController.swift in Sources */,
 				D0445E632647E5F10063AE5F /* SSFileManager.swift in Sources */,
 				0401C9D22622862B00259402 /* Subject.swift in Sources */,
@@ -892,8 +911,8 @@
 				0499142F26131D38005E3726 /* UIImageExtensions.swift in Sources */,
 				04D648A525EE3C89007D43AF /* TabBarController.swift in Sources */,
 				04C1A68025EF78D9003A7AAA /* Lesson.swift in Sources */,
+				D09C7A82266928D60018C280 /* NotificationViewController.swift in Sources */,
 				04AF6E8325EA31C90092429E /* StringExtensions.swift in Sources */,
-				04B8FF2625F76E890070A212 /* NotificationCell.swift in Sources */,
 				04A1C93625F0E01100D270A1 /* CardTransition.swift in Sources */,
 				04419FD0262979730017C924 /* InfoBoxView.swift in Sources */,
 				04D648AA25EE3DAC007D43AF /* AppLoading.swift in Sources */,
@@ -920,6 +939,7 @@
 				044FAFDB260DDF7C007B0581 /* EmptyLessonView.swift in Sources */,
 				0415EC4626009B4700195246 /* ZoomSettingViewController.swift in Sources */,
 				04C1A67B25EF7783003A7AAA /* ScheduleViewModel.swift in Sources */,
+				D09C7A86266929BA0018C280 /* NotificationModel.swift in Sources */,
 				043F2225260B2A790099A704 /* RegisterCourseViewController.swift in Sources */,
 				0435491B2609D5A700F75F51 /* MeetingViewModel.swift in Sources */,
 			);

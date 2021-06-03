@@ -82,7 +82,8 @@ class RegisterCourseTableCell: UITableViewCell {
         let lbl = UILabel()
         lbl.textColor = .black
         lbl.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
-        lbl.numberOfLines = 3
+        lbl.numberOfLines = 10
+        lbl.lineBreakMode = .byWordWrapping
         return lbl
     }()
     

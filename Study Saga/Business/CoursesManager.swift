@@ -28,7 +28,7 @@ class CoursesManager: NSObject, ObservableObject {
             return
         }
         
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/courses/latest"
+        let url = "\(kDomain)/api/courses/latest"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(token)",
             "Accept": "*/*"
@@ -76,7 +76,7 @@ class CoursesManager: NSObject, ObservableObject {
             return
         }
         
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/courses/all"
+        let url = "\(kDomain)/api/courses/all"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(token)",
             "Accept": "*/*"
@@ -125,7 +125,7 @@ class CoursesManager: NSObject, ObservableObject {
             return
         }
         
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/deadline/"
+        let url = "\(kDomain)/api/deadline/"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(cachingToken)",
             "Accept": "*/*"
@@ -172,7 +172,7 @@ class CoursesManager: NSObject, ObservableObject {
             return
         }
         
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/courses/\(id)"
+        let url = "\(kDomain)/api/courses/\(id)"
         
         NetworkManager.GET(
             url: url,
@@ -190,6 +190,4 @@ class CoursesManager: NSObject, ObservableObject {
             completion(course)
         }
     }
-    
-    
 }

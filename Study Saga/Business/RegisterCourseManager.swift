@@ -41,7 +41,7 @@ class RegisterCourseManager: NSObject {
             return
         }
         
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/subject/"
+        let url = "\(kDomain)/api/subject/"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(cachingToken)",
             "Accept": "*/*"
@@ -98,7 +98,7 @@ class RegisterCourseManager: NSObject {
             return
         }
         
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/register/"
+        let url = "\(kDomain)/api/register/"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(cachingToken)",
             "Accept": "*/*"
@@ -162,7 +162,7 @@ class RegisterCourseManager: NSObject {
     
     func getRegistedCourses(_ completion: @escaping ([Course], Error?) -> Void) {
         
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/register/"
+        let url = "\(kDomain)/api/register/"
         
         var result: [Course] = []
         NetworkManager.GET(

@@ -22,7 +22,7 @@ class LessonManager: NSObject, ObservableObject {
             return
         }
         
-        let url = "http://\(kServerUrl):\(kPortNumber)/api/lesson/"
+        let url = "\(kDomain)/api/lesson/"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(token)",
             "Accept": "*/*"
