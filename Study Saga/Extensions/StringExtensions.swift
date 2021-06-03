@@ -71,10 +71,12 @@ extension String {
     }
     
     static func nearDateFormat(timeInterval: TimeInterval?) -> String {
-        guard let ts = timeInterval else {
+        guard var ts = timeInterval else {
             return ""
         }
         
+        
+        ts /= 1000 // convert to seconds
         let date = Date(timeIntervalSince1970: ts)
         let dateFormatter = DateFormatter()
         let calendar = Calendar.current

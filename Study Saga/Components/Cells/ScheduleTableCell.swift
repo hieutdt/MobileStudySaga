@@ -157,6 +157,20 @@ class ScheduleTableCell: UITableViewCell {
     
     override func prepareForReuse() {
         self.isNearestClass = false
+        self.activateSkeleton()
+    }
+    
+    func activateSkeleton() {
+        self.isSkeletonable = true
+        self.contentView.isSkeletonable = true
+        self.timeLine.isSkeletonable = true
+        self.onLearningIcon.isSkeletonable = true
+        self.timeLabel.isSkeletonable = true
+        self.classContainerButton.isSkeletonable = true
+        self.classNameLabel.isSkeletonable = true
+        self.teacherNameLabel.isSkeletonable = true
+        self.classImageView.isSkeletonable = true
+        self.addToCalendarLabel.isSkeletonable = true
     }
 
     // MARK: - Initialize
@@ -166,16 +180,7 @@ class ScheduleTableCell: UITableViewCell {
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
         
-        self.isSkeletonable = true
-        self.contentView.isSkeletonable = true
-        self.timeLine.isSkeletonable = true
-        self.onLearningIcon.isSkeletonable = true
-        self.timeLabel.isSkeletonable = false
-        self.classContainerButton.isSkeletonable = true
-        self.classNameLabel.isSkeletonable = true
-        self.teacherNameLabel.isSkeletonable = true
-        self.classImageView.isSkeletonable = true
-        self.addToCalendarLabel.isSkeletonable = true
+        self.activateSkeleton()
         
         //-------------------------------------------------------
         //  Time Line

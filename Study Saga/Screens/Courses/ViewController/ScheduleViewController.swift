@@ -10,12 +10,15 @@ import UIKit
 import Combine
 import SkeletonView
 import EventKit
+import SVProgressHUD
 
 
 class ScheduleViewController: UIViewController {
     
     // MARK: - UI Outlets
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var headerHeight: NSLayoutConstraint!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var timeButton: UIButton!
     
@@ -51,8 +54,9 @@ class ScheduleViewController: UIViewController {
         self.headerView.layer.shadowRadius = 5
         self.headerView.layer.shadowOpacity = 0.05
         self.headerView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        
         self.view.bringSubviewToFront(self.headerView)
+        
+        self.headerHeight.constant = 20 + getStatusBarHeight()
         
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -66,7 +70,7 @@ class ScheduleViewController: UIViewController {
         self.timeButton.setTitleColor(.lightText, for: .normal)
         
         tableView.dataSource = self
-        tableView.rowHeight = 250
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.isSkeletonable = true
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
@@ -138,18 +142,15 @@ class ScheduleViewController: UIViewController {
         chooseDateButton.mas_makeConstraints { make in
             make?.trailing.equalTo()(headerView.mas_trailing)?.offset()(-20)
             make?.size.equalTo()(40)
-            make?.centerY.equalTo()(headerView.mas_centerY)
+            make?.centerY.equalTo()(titleLabel.mas_centerY)
         }
         chooseDateButton.layer.cornerRadius = 10
     }
     
     func fetchData() {
-        self.tableView.showAnimatedGradientSkeleton()
+        AppLoading.showLoading(viewController: self)
         self.viewModel.fetchLessons { isSuccess in
-            self.tableView.stopSkeletonAnimation()
-            self.view.hideSkeleton()
-            
-            self.tableView.rowHeight = UITableView.automaticDimension
+            AppLoading.hideLoading()
             self.tableView.reloadData()
         }
     }

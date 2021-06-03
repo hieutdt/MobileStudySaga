@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8d-mh-COb" userLabel="Header">
-                                <rect key="frame" x="0.0" y="44" width="414" height="94"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lịch học" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5Z-wH-sYe">
                                         <rect key="frame" x="30" y="20" width="110" height="34"/>
@@ -41,7 +41,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQW-01-ME1">
-                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -53,14 +53,16 @@
                             <constraint firstItem="oQW-01-ME1" firstAttribute="leading" secondItem="gf8-Vm-8hY" secondAttribute="leading" id="D8e-SX-kgV"/>
                             <constraint firstItem="o8d-mh-COb" firstAttribute="trailing" secondItem="gf8-Vm-8hY" secondAttribute="trailing" id="UJH-WI-juk"/>
                             <constraint firstItem="oQW-01-ME1" firstAttribute="trailing" secondItem="gf8-Vm-8hY" secondAttribute="trailing" id="YFp-0U-r70"/>
-                            <constraint firstItem="o8d-mh-COb" firstAttribute="top" secondItem="gf8-Vm-8hY" secondAttribute="top" id="YJ0-r9-EX2"/>
+                            <constraint firstItem="o8d-mh-COb" firstAttribute="top" secondItem="wXa-dF-jEU" secondAttribute="top" id="YJ0-r9-EX2"/>
                             <constraint firstItem="oQW-01-ME1" firstAttribute="bottom" secondItem="gf8-Vm-8hY" secondAttribute="bottom" id="xp4-Pb-DhR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerHeight" destination="AKl-jT-G72" id="zR4-TN-0pN"/>
                         <outlet property="headerView" destination="o8d-mh-COb" id="EuM-8N-PZx"/>
                         <outlet property="tableView" destination="oQW-01-ME1" id="WzT-xw-PmW"/>
                         <outlet property="timeButton" destination="ZI1-3f-IsF" id="kt6-JI-Elh"/>
+                        <outlet property="titleLabel" destination="a5Z-wH-sYe" id="awK-xB-UHx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0p-sB-wlm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

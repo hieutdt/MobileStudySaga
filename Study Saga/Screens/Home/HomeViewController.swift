@@ -70,6 +70,9 @@ class HomeViewController: UIViewController {
             self.avatarImageView.hideSkeleton(transition: .crossDissolve(0.25))
         }
         
+        self.nearestClassContainer.show()
+        self.emptyLessonView.hide()
+        
         self.viewModel.fetchComingLesson { lesson in
             self.emptyLessonView.hideSkeleton(transition: .crossDissolve(0.25))
             self.nearestClassContainer.hideSkeleton(transition: .crossDissolve(0.25))
@@ -88,6 +91,11 @@ class HomeViewController: UIViewController {
             self.deadlinesTableView.reloadData()
             self.view.setNeedsLayout()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.bringSubviewToFront(nearestClassContainer)
     }
     
     func showSkeleton() {
@@ -136,8 +144,11 @@ class HomeViewController: UIViewController {
         self.nearestClassContainer.layer.shadowOpacity = 0.05
         self.nearestClassContainer.layer.shadowRadius = 10
         self.nearestClassContainer.layer.shadowOffset = CGSize(width: 0, height: 4)
-        self.nearestClassContainer.hide()
     
+        self.nearestClassName.isSkeletonable = true
+        self.nearestClassTeacherName.isSkeletonable = true
+        self.nearestClassStart.isSkeletonable = true
+        self.joinClassButton.isSkeletonable = true
         self.joinClassButton.addTarget(self,
                                        action: #selector(nearestClassButtonTapped),
                                        for: .touchUpInside)
@@ -147,7 +158,7 @@ class HomeViewController: UIViewController {
                                                 forState: .highlighted)
         self.joinClassButton.layer.cornerRadius = 20
         
-        self.emptyLessonView.show()
+        self.emptyLessonView.hide()
         
         self.showAllDeadlineButton.tintColor = .primary
         
@@ -237,10 +248,6 @@ class HomeViewController: UIViewController {
                     self.nearestClassName.text = lesson.courseName
                     self.nearestClassTeacherName.text = lesson.lessonName
                     self.nearestClassStart.text = .nearDateFormat(timeInterval: lesson.dateStart)
-                    
-//                    self.nearestClassName.textColor = .white
-//                    self.nearestClassStart.textColor = .lightText
-//                    self.nearestClassTeacherName.textColor = .lightText
                 }
             }
             .store(in: &self.cancellables)

@@ -14,11 +14,19 @@ class LaunchViewController: UIViewController {
     
     let appNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 40)
+        label.font = UIFont(name: "SVN-Gilroy Bold", size: 40)
         label.textColor = .white
         label.textAlignment = .center
         label.text = "STUDY SAGA"
         return label
+    }()
+    
+    var container = UIView()
+    
+    var logoImgView: UIImageView = {
+        let imgView = UIImageView()
+        imgView.image = UIImage(named: "plane_paper")
+        return imgView
     }()
     
     override func viewDidLoad() {
@@ -32,13 +40,27 @@ class LaunchViewController: UIViewController {
     }
     
     private func setUpUI() {
-        self.view.backgroundColor = .primary
-        self.view.addSubview(appNameLabel)
-        appNameLabel.mas_makeConstraints { make in
-            make?.leading.equalTo()(self.view.mas_leading)?.with()?.offset()(30)
-            make?.trailing.equalTo()(self.view.mas_trailing)?.with()?.offset()(-30)
+        self.view.backgroundColor = .white
+        
+        self.view.addSubview(container)
+        container.backgroundColor = .clear
+        container.mas_makeConstraints { make in
             make?.centerX.equalTo()(self.view.mas_centerX)
             make?.centerY.equalTo()(self.view.mas_centerY)
+        }
+        
+        container.addSubview(logoImgView)
+        logoImgView.mas_makeConstraints { make in
+            make?.centerX.equalTo()(container.mas_centerX)
+            make?.size.equalTo()(200)
+        }
+        
+        container.addSubview(appNameLabel)
+        appNameLabel.mas_makeConstraints { make in
+            make?.top.equalTo()(logoImgView.mas_bottom)?.offset()(20)
+            make?.leading.equalTo()(container.mas_leading)
+            make?.trailing.equalTo()(container.mas_trailing)
+            make?.bottom.equalTo()(container.mas_bottom)
         }
     }
     
