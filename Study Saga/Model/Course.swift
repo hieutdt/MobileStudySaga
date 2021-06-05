@@ -99,5 +99,12 @@ extension Course {
             let deadline = Deadline(from: dict)
             self.deadlines.append(deadline)
         }
+        
+        self.documents = []
+        let documentDicts = json.arrayDictForKey("documents")
+        for dict in documentDicts {
+            let doc = Document(from: dict)
+            self.documents.append(doc)
+        }
     }
 }

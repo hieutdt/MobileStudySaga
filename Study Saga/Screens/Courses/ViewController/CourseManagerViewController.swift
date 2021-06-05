@@ -120,10 +120,14 @@ extension CourseManagerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let course = self.viewModel.courses[indexPath.item]
+        let cell = self.tableView.cellForRow(at: indexPath) as! CourseTableCell
         
+        cell.isLoading = true
         AppLoading.showLoading(with: "Đang tải", viewController: self)
         
         CoursesManager.manager.getCourseInfo(id: course.courseId) { course in
+            
+            cell.isLoading = false
             
             AppLoading.hideLoading()
             

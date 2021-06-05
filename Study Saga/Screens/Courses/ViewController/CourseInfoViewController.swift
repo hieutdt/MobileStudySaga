@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Combine
 import AlamofireImage
+import PDFKit
 
 
 class CourseInfoViewController: UIViewController {
@@ -486,16 +487,24 @@ extension CourseInfoViewController: FileLinkTableCellDelegate {
     func didSelectCell(_ cell: FileLinkTableCell) {
         if let indexPath = self.documentTableView.indexPath(for: cell) {
             let index = indexPath.row
-            let document = self.viewModel.course.documents[index]
+            var document = self.viewModel.course.documents[index]
+            
+            if UserDefaults.standard.string(forKey: document.id) != nil {
+                document.downloaded = true
+            } else {
+                document.downloaded = false
+            }
+            
             if document.downloaded {
                 // Read action
                 let alert = UIAlertController(title: document.name,
-                                              message: nil,
+                                              message: "Tài liệu đã được tải sẵn, việc đọc sẽ không tốn tài nguyên mạng",
                                               preferredStyle: .actionSheet)
                 let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel)
                 let readAction = UIAlertAction(title: "Đọc",
                                                style: .default) { action in
-                    
+                    let documentDiskUrl = UserDefaults.standard.string(forKey: document.id)
+                    self.openDocumentWithName(document.name, url: documentDiskUrl!)
                 }
                 
                 alert.addAction(readAction)
@@ -506,17 +515,41 @@ extension CourseInfoViewController: FileLinkTableCellDelegate {
             } else {
                 // Download file first
                 let alert = UIAlertController(title: document.name,
-                                              message: "Tiến hành tải file?",
+                                              message: "Tài liệu chưa có sẵn, bạn có muốn tiến hành tải file?",
                                               preferredStyle: .actionSheet)
                 let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel)
                 let downloadAction = UIAlertAction(title: "Tải xuống",
                                                    style: .default) { action in
                     
+                    AppLoading.showProgress(0, viewController: self)
+                    
+                    FileDownloadManager.manager.startDownloadFileWith(url: document.path,
+                                                                      fileName: document.name) { progress in
+                        AppLoading.showProgress(Float(progress), viewController: self)
+                    } completionBlock: { url, error in
+                        AppLoading.showSuccess(with: "Tải thành công", viewController: self)
+                        UserDefaults.standard.setValue(url, forKey: document.id)
+                        self.openDocumentWithName(document.name, url: url)
+                    }
                 }
                 
                 alert.addAction(downloadAction)
                 alert.addAction(cancelAction)
                 self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func openDocumentWithName(_ name: String,
+                              url: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            if (URL(string: url) != nil) {
+                let pdfViewController = PDFViewController()
+                pdfViewController.modalPresentationStyle = .fullScreen
+                pdfViewController.documentUrl = url
+                pdfViewController.titleText = name
+                
+                self.present(pdfViewController, animated: true, completion: nil)
             }
         }
     }

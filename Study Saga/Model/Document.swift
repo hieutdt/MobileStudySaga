@@ -28,3 +28,12 @@ struct Document: Hashable {
         return lhs.id == rhs.id
     }
 }
+
+extension Document {
+    init(from dict: [String: Any]) {
+        self.id = dict.stringValueForKey("_id")
+        self.name = dict.stringValueForKey("name")
+        self.path = dict.stringValueForKey("url")
+        self.type = .pdf
+    }
+}

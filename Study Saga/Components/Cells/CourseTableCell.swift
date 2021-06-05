@@ -41,6 +41,18 @@ class CourseTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var isLoading: Bool = false {
+        didSet {
+            if self.isLoading {
+                self.contentView.backgroundColor = .selectedBackground
+                self.container.backgroundColor = .selectedBackground
+            } else {
+                self.contentView.backgroundColor = .white
+                self.container.backgroundColor = .white
+            }
+        }
+    }
+    
     var courseImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView

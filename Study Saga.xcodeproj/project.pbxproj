@@ -93,7 +93,6 @@
 		D0251B412659254200A23106 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B402659254200A23106 /* DateExtensions.swift */; };
 		D0251B4326592B4600A23106 /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B4226592B4600A23106 /* MonthYearPicker.swift */; };
 		D0251B452659441F00A23106 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0251B442659441F00A23106 /* EventKit.framework */; };
-		D0445E632647E5F10063AE5F /* SSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0445E622647E5F10063AE5F /* SSFileManager.swift */; };
 		D09C7A7A26691A0F0018C280 /* MainScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7726691A0F0018C280 /* MainScreens.storyboard */; };
 		D09C7A7B26691A0F0018C280 /* CourseScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7826691A0F0018C280 /* CourseScreens.storyboard */; };
 		D09C7A7C26691A0F0018C280 /* RegisterCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */; };
@@ -102,6 +101,12 @@
 		D09C7A84266929950018C280 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A83266929950018C280 /* NotificationCell.swift */; };
 		D09C7A86266929BA0018C280 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A85266929BA0018C280 /* NotificationModel.swift */; };
 		D09C7A8826692FFC0018C280 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */; };
+		D0C459AD266B576D0053281C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C459AC266B576D0053281C /* GoogleService-Info.plist */; };
+		D0C459AE266B576D0053281C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C459AC266B576D0053281C /* GoogleService-Info.plist */; };
+		D0C459AF266B576D0053281C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C459AC266B576D0053281C /* GoogleService-Info.plist */; };
+		D0C459B1266B665E0053281C /* FileDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C459B0266B665E0053281C /* FileDownloadManager.swift */; };
+		D0C459B3266B78BC0053281C /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C459B2266B78BC0053281C /* PDFKit.framework */; };
+		D0C459B5266B7B150053281C /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C459B4266B7B150053281C /* PDFViewController.swift */; };
 		D0EE8C662650F6BB00C2E185 /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0EE8C642650F6BB00C2E185 /* MobileRTCResources.bundle */; };
 		D0EE8C672650F8D600C2E185 /* MobileRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */; };
 		D0EE8C682650F8D600C2E185 /* MobileRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -233,7 +238,6 @@
 		D0251B402659254200A23106 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		D0251B4226592B4600A23106 /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPicker.swift; sourceTree = "<group>"; };
 		D0251B442659441F00A23106 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		D0445E622647E5F10063AE5F /* SSFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFileManager.swift; sourceTree = "<group>"; };
 		D09C7A7726691A0F0018C280 /* MainScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainScreens.storyboard; path = Storyboard/MainScreens.storyboard; sourceTree = "<group>"; };
 		D09C7A7826691A0F0018C280 /* CourseScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CourseScreens.storyboard; path = Storyboard/CourseScreens.storyboard; sourceTree = "<group>"; };
 		D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RegisterCourse.storyboard; path = Storyboard/RegisterCourse.storyboard; sourceTree = "<group>"; };
@@ -242,6 +246,10 @@
 		D09C7A83266929950018C280 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		D09C7A85266929BA0018C280 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		D0C459AC266B576D0053281C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0C459B0266B665E0053281C /* FileDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadManager.swift; sourceTree = "<group>"; };
+		D0C459B2266B78BC0053281C /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
+		D0C459B4266B7B150053281C /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
 		D0EE8C642650F6BB00C2E185 /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
 		E309E5041FA8D9CC61ED33EE /* Pods-Study Saga-Study SagaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study Saga-Study SagaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Study Saga-Study SagaUITests/Pods-Study Saga-Study SagaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +264,7 @@
 			files = (
 				3A335CC880F263A53E737774 /* Pods_Study_Saga.framework in Frameworks */,
 				D0251B452659441F00A23106 /* EventKit.framework in Frameworks */,
+				D0C459B3266B78BC0053281C /* PDFKit.framework in Frameworks */,
 				D0EE8C672650F8D600C2E185 /* MobileRTC.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +382,7 @@
 				042EB2D2260DD13500B794FA /* CoursesManager.swift */,
 				046659BB26158CC2004499CC /* LessonManager.swift */,
 				048574FB262489E800821BCC /* RegisterCourseManager.swift */,
-				D0445E622647E5F10063AE5F /* SSFileManager.swift */,
+				D0C459B0266B665E0053281C /* FileDownloadManager.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 				0454D8E625F08A53006DCB11 /* CourseManagerViewController.swift */,
 				04A1C93D25F0E04400D270A1 /* CourseInfoViewController.swift */,
 				049B0E1E261DA87200272C05 /* DeadlineViewController.swift */,
+				D0C459B4266B7B150053281C /* PDFViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -520,6 +530,7 @@
 				04AF6E6225EA1B8F0092429E /* Resource */,
 				04DB50AE25E4A8F6004B4C9C /* AppDelegate.swift */,
 				04DB50BF25E4A8F7004B4C9C /* Info.plist */,
+				D0C459AC266B576D0053281C /* GoogleService-Info.plist */,
 				04DB50B725E4A8F6004B4C9C /* Study_Saga.xcdatamodeld */,
 			);
 			path = "Study Saga";
@@ -598,6 +609,7 @@
 		A2F7F88E607B7D36E5D6BDC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0C459B2266B78BC0053281C /* PDFKit.framework */,
 				D0251B442659441F00A23106 /* EventKit.framework */,
 				87E8E2AC11D409C9E10B6072 /* Pods_Study_Saga.framework */,
 				C7807A9B270D57AF6195D47B /* Pods_Study_Saga_Study_SagaUITests.framework */,
@@ -732,6 +744,7 @@
 				D09C7A7F26691A2B0018C280 /* LaunchScreen.storyboard in Resources */,
 				D09C7A7A26691A0F0018C280 /* MainScreens.storyboard in Resources */,
 				04DB50BB25E4A8F6004B4C9C /* Assets.xcassets in Resources */,
+				D0C459AD266B576D0053281C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +752,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C459AE266B576D0053281C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +760,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C459AF266B576D0053281C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,7 +893,6 @@
 				048574FC262489E800821BCC /* RegisterCourseManager.swift in Sources */,
 				D09C7A84266929950018C280 /* NotificationCell.swift in Sources */,
 				04503A5425EF36B9007A4A81 /* ScheduleViewController.swift in Sources */,
-				D0445E632647E5F10063AE5F /* SSFileManager.swift in Sources */,
 				0401C9D22622862B00259402 /* Subject.swift in Sources */,
 				0489500E25ED40F50069C559 /* AccountViewModel.swift in Sources */,
 				04DB50B925E4A8F6004B4C9C /* Study_Saga.xcdatamodeld in Sources */,
@@ -917,6 +931,7 @@
 				04419FD0262979730017C924 /* InfoBoxView.swift in Sources */,
 				04D648AA25EE3DAC007D43AF /* AppLoading.swift in Sources */,
 				04D1A86225EE850600941E8F /* SignUpViewController.swift in Sources */,
+				D0C459B1266B665E0053281C /* FileDownloadManager.swift in Sources */,
 				04B8FF1C25F75CDC0070A212 /* CourseInfoViewModel.swift in Sources */,
 				04AF6E8825EA335A0092429E /* AppColor.swift in Sources */,
 				04A1C93825F0E01100D270A1 /* PresentCardAnimator.swift in Sources */,
@@ -934,6 +949,7 @@
 				04A1C93E25F0E04400D270A1 /* CourseInfoViewController.swift in Sources */,
 				040CB1B1262888E2007D3F66 /* MiniStateView.swift in Sources */,
 				04A1C92D25F0C20600D270A1 /* CourseViewModel.swift in Sources */,
+				D0C459B5266B7B150053281C /* PDFViewController.swift in Sources */,
 				0436296A26084CA200F639C1 /* AppDebug.swift in Sources */,
 				043CC3B225EDFA0A00790514 /* User.swift in Sources */,
 				044FAFDB260DDF7C007B0581 /* EmptyLessonView.swift in Sources */,
@@ -1129,7 +1145,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hieutdt.com.vn.Study-Saga";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hieutdt.studysaga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1156,7 +1172,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hieutdt.com.vn.Study-Saga";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hieutdt.studysaga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

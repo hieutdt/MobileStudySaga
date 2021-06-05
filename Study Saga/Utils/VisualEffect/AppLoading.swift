@@ -26,6 +26,18 @@ class AppLoading: NSObject {
         SVProgressHUD.show(withStatus: text)
     }
     
+    static func showProgress(_ progress: Float,
+                             viewController: UIViewController) {
+        SVProgressHUD.setForegroundColor(.primary)
+        SVProgressHUD.setRingThickness(3)
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultAnimationType(.native)
+        SVProgressHUD.setContainerView(viewController.view)
+        SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
+        
+        SVProgressHUD.showProgress(progress)
+    }
+    
     static func hideLoading() {
         SVProgressHUD.dismiss()
     }

@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 import MobileRTC
 import SkeletonView
+import Firebase
 
 let sdkUserID: String = "trandinhtonhieu2@gmail.com"
 let sdkKey: String = "4ZYpiKOuWpLha1YFHtkNOYnRan43sKXvi1lw"
@@ -31,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set up MobileRTC SDK
         setupSDK(sdkKey: sdkKey, sdkSecret: sdkSecret)
+        
+        // Set up Firebase
+        FirebaseApp.configure()
         
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)

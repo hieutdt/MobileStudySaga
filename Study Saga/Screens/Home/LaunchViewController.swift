@@ -43,7 +43,7 @@ class LaunchViewController: UIViewController {
         self.view.backgroundColor = .white
         
         self.view.addSubview(container)
-        container.backgroundColor = .clear
+        container.backgroundColor = .white
         container.mas_makeConstraints { make in
             make?.centerX.equalTo()(self.view.mas_centerX)
             make?.centerY.equalTo()(self.view.mas_centerY)
