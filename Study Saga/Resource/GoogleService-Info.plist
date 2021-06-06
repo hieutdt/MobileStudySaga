@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>80830175246-9jal1c20qci9tv4see9ejndluk5hmh9h.apps.googleusercontent.com</string>
+	<string>386727792241-cr0stv0je0dmtlc2596qbl37af0flmtt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.80830175246-9jal1c20qci9tv4see9ejndluk5hmh9h</string>
+	<string>com.googleusercontent.apps.386727792241-cr0stv0je0dmtlc2596qbl37af0flmtt</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDTfNwqKAsPay8ZggEHZdZxRBJa51Z1Ip4</string>
+	<string>AIzaSyCMiG0AWzq8SP-8FQMqP6J5tqil4H6AeUk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>80830175246</string>
+	<string>386727792241</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.hieutdt.studysaga</string>
+	<string>studysaga</string>
 	<key>PROJECT_ID</key>
-	<string>studysaga-f43e3</string>
+	<string>studysaga-3775d</string>
 	<key>STORAGE_BUCKET</key>
-	<string>studysaga-f43e3.appspot.com</string>
+	<string>studysaga-3775d.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:80830175246:ios:2c824c62c70823136a845f</string>
+	<string>1:386727792241:ios:0dadeb574bf2206647d5d0</string>
 </dict>
 </plist>

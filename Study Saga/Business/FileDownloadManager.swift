@@ -27,13 +27,12 @@ final class FileDownloadManager: NSObject {
                                fileName: String,
                                progressBlock: @escaping (Double) -> Void,
                                completionBlock: @escaping (String, FileDownloadError) -> Void) {
-        UIApplication.shared.isIdleTimerDisabled = true
         
         let destination: DownloadRequest.Destination = { tempUrl, response in
             var documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            documentsUrl.appendPathComponent(fileName)
-            print(documentsUrl)
-            return (documentsUrl, [.createIntermediateDirectories])
+            documentsUrl = documentsUrl.appendingPathComponent(fileName)
+            
+            return (documentsUrl, [.removePreviousFile])
         }
         
         if let url = URL(string: url) {
@@ -43,12 +42,12 @@ final class FileDownloadManager: NSObject {
                 }
                 .responseData { response in
                     
-                    if let destinationUrl = response.fileURL {
+                    if let destinationUrl = response.fileURL?.absoluteString {
                         print(destinationUrl)
                         
                         if let statusCode = response.response?.statusCode {
                             print(statusCode)
-                            completionBlock(destinationUrl.absoluteString, .none)
+                            completionBlock(destinationUrl, .none)
                         } else {
                             completionBlock("", .urlError)
                         }

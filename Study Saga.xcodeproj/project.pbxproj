@@ -101,12 +101,12 @@
 		D09C7A84266929950018C280 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A83266929950018C280 /* NotificationCell.swift */; };
 		D09C7A86266929BA0018C280 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A85266929BA0018C280 /* NotificationModel.swift */; };
 		D09C7A8826692FFC0018C280 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */; };
-		D0C459AD266B576D0053281C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C459AC266B576D0053281C /* GoogleService-Info.plist */; };
-		D0C459AE266B576D0053281C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C459AC266B576D0053281C /* GoogleService-Info.plist */; };
-		D0C459AF266B576D0053281C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C459AC266B576D0053281C /* GoogleService-Info.plist */; };
 		D0C459B1266B665E0053281C /* FileDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C459B0266B665E0053281C /* FileDownloadManager.swift */; };
 		D0C459B3266B78BC0053281C /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C459B2266B78BC0053281C /* PDFKit.framework */; };
 		D0C459B5266B7B150053281C /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C459B4266B7B150053281C /* PDFViewController.swift */; };
+		D0C65421266C9CF1000E4A54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C65420266C9CF1000E4A54 /* GoogleService-Info.plist */; };
+		D0C65422266C9CF1000E4A54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C65420266C9CF1000E4A54 /* GoogleService-Info.plist */; };
+		D0C65423266C9CF1000E4A54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C65420266C9CF1000E4A54 /* GoogleService-Info.plist */; };
 		D0EE8C662650F6BB00C2E185 /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D0EE8C642650F6BB00C2E185 /* MobileRTCResources.bundle */; };
 		D0EE8C672650F8D600C2E185 /* MobileRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */; };
 		D0EE8C682650F8D600C2E185 /* MobileRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -246,10 +246,10 @@
 		D09C7A83266929950018C280 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		D09C7A85266929BA0018C280 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
-		D0C459AC266B576D0053281C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0C459B0266B665E0053281C /* FileDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadManager.swift; sourceTree = "<group>"; };
 		D0C459B2266B78BC0053281C /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		D0C459B4266B7B150053281C /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		D0C65420266C9CF1000E4A54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0EE8C632650F6BB00C2E185 /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
 		D0EE8C642650F6BB00C2E185 /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
 		E309E5041FA8D9CC61ED33EE /* Pods-Study Saga-Study SagaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study Saga-Study SagaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Study Saga-Study SagaUITests/Pods-Study Saga-Study SagaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -443,6 +443,7 @@
 				D09C7A7726691A0F0018C280 /* MainScreens.storyboard */,
 				D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */,
 				04DB50BA25E4A8F6004B4C9C /* Assets.xcassets */,
+				D0C65420266C9CF1000E4A54 /* GoogleService-Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -530,7 +531,6 @@
 				04AF6E6225EA1B8F0092429E /* Resource */,
 				04DB50AE25E4A8F6004B4C9C /* AppDelegate.swift */,
 				04DB50BF25E4A8F7004B4C9C /* Info.plist */,
-				D0C459AC266B576D0053281C /* GoogleService-Info.plist */,
 				04DB50B725E4A8F6004B4C9C /* Study_Saga.xcdatamodeld */,
 			);
 			path = "Study Saga";
@@ -744,7 +744,7 @@
 				D09C7A7F26691A2B0018C280 /* LaunchScreen.storyboard in Resources */,
 				D09C7A7A26691A0F0018C280 /* MainScreens.storyboard in Resources */,
 				04DB50BB25E4A8F6004B4C9C /* Assets.xcassets in Resources */,
-				D0C459AD266B576D0053281C /* GoogleService-Info.plist in Resources */,
+				D0C65421266C9CF1000E4A54 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,7 +752,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C459AE266B576D0053281C /* GoogleService-Info.plist in Resources */,
+				D0C65422266C9CF1000E4A54 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,7 +760,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C459AF266B576D0053281C /* GoogleService-Info.plist in Resources */,
+				D0C65423266C9CF1000E4A54 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

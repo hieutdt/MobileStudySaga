@@ -10,6 +10,7 @@ import UIKit
 import Combine
 import AlamofireImage
 import PDFKit
+import FileKit
 
 
 class CourseInfoViewController: UIViewController {
@@ -171,7 +172,7 @@ class CourseInfoViewController: UIViewController {
     private func setUpNavigationBar() {
         self.navigationView.backgroundColor = backgroundColor
         self.navigationView.alpha = 0
-
+        
         self.navigationBackBtn.backgroundColor = .clear
         self.navigationBackBtn.setImage(
             UIImage(systemName: "chevron.left"),
@@ -184,7 +185,7 @@ class CourseInfoViewController: UIViewController {
         self.navigationBackBtn.addTarget(self,
                                          action: #selector(backButtonTapped),
                                          for: .touchUpInside)
-
+        
         self.navigationTitleLbl.textColor = .black
         self.navigationTitleLbl.text = self.course?.className
         self.navigationTitleLbl.alpha = 0
@@ -458,7 +459,7 @@ extension CourseInfoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: DeadlineTableCell.reuseId
+            withIdentifier: DeadlineTableCell.reuseId
         ) as? DeadlineTableCell else {
             fatalError("DeadlineTableCell has not registed!")
         }
@@ -504,7 +505,11 @@ extension CourseInfoViewController: FileLinkTableCellDelegate {
                 let readAction = UIAlertAction(title: "Đọc",
                                                style: .default) { action in
                     let documentDiskUrl = UserDefaults.standard.string(forKey: document.id)
-                    self.openDocumentWithName(document.name, url: documentDiskUrl!)
+                    self.openDocumentWithName(document.name, urlString: documentDiskUrl!) {
+                        // Failure
+                        UserDefaults.standard.removeObject(forKey: document.id)
+                        AppLoading.showFailed(with: "File không tồn tại. Vui lòng thử tải lại.", viewController: self)
+                    }
                 }
                 
                 alert.addAction(readAction)
@@ -526,10 +531,18 @@ extension CourseInfoViewController: FileLinkTableCellDelegate {
                     FileDownloadManager.manager.startDownloadFileWith(url: document.path,
                                                                       fileName: document.name) { progress in
                         AppLoading.showProgress(Float(progress), viewController: self)
+                        
                     } completionBlock: { url, error in
+                        
                         AppLoading.showSuccess(with: "Tải thành công", viewController: self)
+                        
                         UserDefaults.standard.setValue(url, forKey: document.id)
-                        self.openDocumentWithName(document.name, url: url)
+                        
+                        self.openDocumentWithName(document.name, urlString: url) {
+                            UserDefaults.standard.removeObject(forKey: document.id)
+                            
+                            AppLoading.showFailed(with: "File không tồn tại. Vui lòng thử tải lại", viewController: self)
+                        }
                     }
                 }
                 
@@ -541,16 +554,27 @@ extension CourseInfoViewController: FileLinkTableCellDelegate {
     }
     
     func openDocumentWithName(_ name: String,
-                              url: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            if (URL(string: url) != nil) {
-                let pdfViewController = PDFViewController()
-                pdfViewController.modalPresentationStyle = .fullScreen
-                pdfViewController.documentUrl = url
-                pdfViewController.titleText = name
-                
-                self.present(pdfViewController, animated: true, completion: nil)
+                              urlString: String,
+                              failure: @escaping () -> Void) {
+        // Check data
+        if let url = URL(string: urlString) {
+            let document = PDFDocument(url: url)
+            if document == nil {
+                failure()
+                return
+            }
+            
+            if document?.pageCount == 0 {
+                failure()
+                return
             }
         }
+        
+        let pdfViewController = PDFViewController()
+        pdfViewController.modalPresentationStyle = .fullScreen
+        pdfViewController.documentUrl = urlString
+        pdfViewController.titleText = name
+        
+        self.present(pdfViewController, animated: true, completion: nil)
     }
 }
