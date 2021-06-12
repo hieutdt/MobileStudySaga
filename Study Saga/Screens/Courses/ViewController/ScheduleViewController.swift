@@ -47,6 +47,11 @@ class ScheduleViewController: UIViewController {
         self.fetchData()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.headerView.createViewBackgroundWithAppGradient()
+    }
+    
     func setUpUI() {
         self.headerView.backgroundColor = .primary
         self.headerView.layer.masksToBounds = false

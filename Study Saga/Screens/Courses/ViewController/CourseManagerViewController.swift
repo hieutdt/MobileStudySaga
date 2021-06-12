@@ -30,6 +30,11 @@ class CourseManagerViewController: UIViewController {
         self.fetch()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.headerView.createViewBackgroundWithAppGradient()
+    }
+    
     func fetch() {
         
         self.tableView.rowHeight = 255

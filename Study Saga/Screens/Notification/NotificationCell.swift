@@ -47,39 +47,40 @@ class NotificationCell: UITableViewCell {
     private func customInit() {
         
         thumbImageView.image = UIImage(named: "")
+        thumbImageView.clipsToBounds = true
         thumbImageView.layer.cornerRadius = 15
         self.contentView.addSubview(thumbImageView)
         thumbImageView.mas_makeConstraints { make in
             make?.size.equalTo()(60)
             make?.centerY.equalTo()(self.contentView.mas_centerY)
-            make?.leading.equalTo()(self.contentView.mas_leading)?.offset()(10)
+            make?.leading.equalTo()(self.contentView.mas_leading)?.offset()(15)
         }
         
         mainStackView.axis = .vertical
         mainStackView.distribution = .fill
-        mainStackView.alignment = .center
+        mainStackView.alignment = .leading
         self.contentView.addSubview(mainStackView)
         mainStackView.mas_makeConstraints { make in
-            make?.leading.equalTo()(thumbImageView.mas_trailing)?.offset()(5)
-            make?.trailing.equalTo()(self.contentView.mas_trailing)?.offset()(-10)
-            make?.top.equalTo()(self.contentView.mas_top)?.offset()(5)
-            make?.bottom.equalTo()(self.contentView.mas_bottom)?.offset()(-5)
+            make?.leading.equalTo()(thumbImageView.mas_trailing)?.offset()(10)
+            make?.trailing.equalTo()(self.contentView.mas_trailing)?.offset()(-15)
+            make?.top.equalTo()(self.contentView.mas_top)?.offset()(10)
+            make?.bottom.equalTo()(self.contentView.mas_bottom)?.offset()(-10)
         }
         
         courseNameLabel.numberOfLines = 3
-        courseNameLabel.font = .boldSystemFont(ofSize: 15)
+        courseNameLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 16)
         courseNameLabel.textColor = .black
         mainStackView.addArrangedSubview(courseNameLabel)
         
         contentLabel.numberOfLines = 10
-        contentLabel.font = .systemFont(ofSize: 14)
+        contentLabel.font = UIFont(name: "HelveticaNeue", size: 14)
         contentLabel.textColor = .darkText
         mainStackView.addArrangedSubview(contentLabel)
         
         teacherFooterLabel.numberOfLines = 1
         teacherFooterLabel.font = .systemFont(ofSize: 12)
         teacherFooterLabel.textColor = .lightGray
-        mainStackView.addArrangedSubview(contentLabel)
+        mainStackView.addArrangedSubview(teacherFooterLabel)
         
         timeFooterLabel.numberOfLines = 1
         timeFooterLabel.font = .systemFont(ofSize: 12)

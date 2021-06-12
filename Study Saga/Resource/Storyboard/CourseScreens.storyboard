@@ -85,15 +85,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh sách môn học của bạn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaG-El-QCO">
-                                        <rect key="frame" x="30" y="64.5" width="354" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <rect key="frame" x="30" y="69.5" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="ZaG-El-QCO" secondAttribute="bottom" constant="15" id="TZV-9t-0aI"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZaG-El-QCO" secondAttribute="bottom" constant="10" id="TZV-9t-0aI"/>
                                     <constraint firstItem="ZaG-El-QCO" firstAttribute="leading" secondItem="fL3-Df-c1n" secondAttribute="leading" constant="30" id="UEd-bV-3Si"/>
                                     <constraint firstAttribute="height" constant="100" id="WHU-1S-Yh7"/>
                                     <constraint firstAttribute="trailing" secondItem="ZaG-El-QCO" secondAttribute="trailing" constant="30" id="xwf-lF-KXw"/>

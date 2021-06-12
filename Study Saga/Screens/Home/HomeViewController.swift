@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var openCourseImageView: UIImageView!
     @IBOutlet weak var openCourseDummyButton: UIButton!
     
-    var headerGradient = UIButton()
+    var headerGradient = UIView()
     weak var headerGradientHeight: NSLayoutConstraint? = nil
     
     
@@ -201,7 +201,6 @@ class HomeViewController: UIViewController {
         scrollView.addSubview(headerGradient)
         headerGradient.backgroundColor = .primary
         scrollView.bringSubviewToFront(contentView)
-        headerGradient.setGradient()
         headerGradient.mas_makeConstraints { make in
             make?.leading.equalTo()(scrollView.mas_leading)
             make?.trailing.equalTo()(scrollView.mas_trailing)
@@ -209,6 +208,11 @@ class HomeViewController: UIViewController {
         }
         headerGradientHeight = headerGradient.heightAnchor.constraint(equalToConstant: 250)
         headerGradientHeight?.isActive = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        headerGradient.createViewBackgroundWithAppGradient()
     }
     
     // MARK: - Data Binding

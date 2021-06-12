@@ -43,6 +43,11 @@ class AccountViewController: UIViewController {
         self.setUpDataBinding()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.headerContainer.createViewBackgroundWithAppGradient()
+    }
+    
     // MARK: - UI Configure
     
     private func setUpUI() {

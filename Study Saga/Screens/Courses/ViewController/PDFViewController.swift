@@ -30,8 +30,7 @@ class PDFViewController: UIViewController {
             make?.top.equalTo()(self.view.mas_top)
             make?.height.equalTo()(60 + getStatusBarHeight())
         }
-        headerBar.backgroundColor = .appBlack
-        
+        headerBar.backgroundColor = .primary
         headerBar.addSubview(backBtn)
         backBtn.tintColor = .white
         backBtn.addTarget(self, action: #selector(backBtnTapped), for: .touchUpInside)
