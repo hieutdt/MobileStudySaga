@@ -41,6 +41,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var openCourseImageView: UIImageView!
     @IBOutlet weak var openCourseDummyButton: UIButton!
     
+    @IBOutlet weak var recommendCourseView: RecommendCourseView!
+    
     var headerGradient = UIView()
     weak var headerGradientHeight: NSLayoutConstraint? = nil
     
@@ -90,6 +92,12 @@ class HomeViewController: UIViewController {
             self.deadlinesTableView.hideSkeleton(transition: .crossDissolve(0.25))
             self.deadlinesTableView.reloadData()
             self.view.setNeedsLayout()
+        }
+        
+        self.recommendCourseView.showAnimatedGradientSkeleton()
+        self.viewModel.fetchRecommendMajors {
+            self.recommendCourseView.hideSkeleton()
+            self.recommendCourseView.courses = self.viewModel.majors
         }
     }
     
@@ -208,6 +216,9 @@ class HomeViewController: UIViewController {
         }
         headerGradientHeight = headerGradient.heightAnchor.constraint(equalToConstant: 250)
         headerGradientHeight?.isActive = true
+        
+        self.recommendCourseView.backgroundColor = .white
+        self.recommendCourseView.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -251,7 +262,19 @@ class HomeViewController: UIViewController {
                 if let lesson = lesson {
                     self.nearestClassName.text = lesson.courseName
                     self.nearestClassTeacherName.text = lesson.lessonName
-                    self.nearestClassStart.text = .nearDateFormat(timeInterval: lesson.dateStart)
+                    let startDate = Date(timeIntervalSince1970: lesson.dateStart/1000)
+                    let endDate = Date(timeIntervalSince1970: lesson.dateEnd/1000)
+                    let currentDate = Date()
+                    
+                    if (currentDate.timeIntervalSince1970 >= startDate.timeIntervalSince1970 &&
+                            currentDate.timeIntervalSince1970 <= endDate.timeIntervalSince1970) {
+                        self.nearestClassStart.text = "Lớp học đang diễn ra"
+                        self.nearestClassStart.textColor = .red
+                    } else if (currentDate.timeIntervalSince1970 < startDate.timeIntervalSince1970) {
+                        self.nearestClassStart.text = .nearDateFormat(timeInterval: lesson.dateStart) + " (còn " + startDate.distanceTo(currentDate) + ")"
+                    } else {
+                        self.nearestClassStart.text = "Lớp học đã kết thúc."
+                    }
                 }
             }
             .store(in: &self.cancellables)
@@ -387,4 +410,15 @@ func getStatusBarHeight() -> CGFloat {
         statusBarHeight = UIApplication.shared.statusBarFrame.height
     }
     return statusBarHeight
+}
+
+
+extension HomeViewController: RecommendCourseViewDelegate {
+    
+    func didSelectMajor(_ major: Major) {
+        let vc = MajorInfoVIewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.major = major
+        self.present(vc, animated: true, completion: nil)
+    }
 }

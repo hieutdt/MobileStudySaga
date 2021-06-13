@@ -90,9 +90,14 @@
 		0BEB4AEBAD97A0A0E5552B79 /* Pods_Study_SagaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8862F9A61C80366E857A2C /* Pods_Study_SagaTests.framework */; };
 		0D7C9FD34C4806119FDE0AE0 /* Pods_Study_Saga_Study_SagaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7807A9B270D57AF6195D47B /* Pods_Study_Saga_Study_SagaUITests.framework */; };
 		3A335CC880F263A53E737774 /* Pods_Study_Saga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E8E2AC11D409C9E10B6072 /* Pods_Study_Saga.framework */; };
+		D007C0E52675AA50005FFF28 /* RecommendTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007C0E42675AA50005FFF28 /* RecommendTableCell.swift */; };
+		D01462F82674FB10007639A0 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01462F72674FB10007639A0 /* Major.swift */; };
+		D01462FA26750AB5007639A0 /* MajorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01462F926750AB5007639A0 /* MajorInfoViewController.swift */; };
 		D0251B412659254200A23106 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B402659254200A23106 /* DateExtensions.swift */; };
 		D0251B4326592B4600A23106 /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B4226592B4600A23106 /* MonthYearPicker.swift */; };
 		D0251B452659441F00A23106 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0251B442659441F00A23106 /* EventKit.framework */; };
+		D055CFAF2674B4CD00280D89 /* RecommendCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D055CFAE2674B4CD00280D89 /* RecommendCourseView.swift */; };
+		D055CFB32674F29700280D89 /* RecommendMajorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D055CFB22674F29700280D89 /* RecommendMajorCell.swift */; };
 		D09C7A7A26691A0F0018C280 /* MainScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7726691A0F0018C280 /* MainScreens.storyboard */; };
 		D09C7A7B26691A0F0018C280 /* CourseScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7826691A0F0018C280 /* CourseScreens.storyboard */; };
 		D09C7A7C26691A0F0018C280 /* RegisterCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */; };
@@ -235,9 +240,14 @@
 		AC44F6EEB1A7F18ADAF5ADA4 /* Pods-Study Saga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study Saga.release.xcconfig"; path = "Target Support Files/Pods-Study Saga/Pods-Study Saga.release.xcconfig"; sourceTree = "<group>"; };
 		BB8862F9A61C80366E857A2C /* Pods_Study_SagaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_SagaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7807A9B270D57AF6195D47B /* Pods_Study_Saga_Study_SagaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_Saga_Study_SagaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D007C0E42675AA50005FFF28 /* RecommendTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendTableCell.swift; path = "Study Saga/Components/RecommendTableCell.swift"; sourceTree = SOURCE_ROOT; };
+		D01462F72674FB10007639A0 /* Major.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major.swift; sourceTree = "<group>"; };
+		D01462F926750AB5007639A0 /* MajorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorInfoViewController.swift; sourceTree = "<group>"; };
 		D0251B402659254200A23106 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		D0251B4226592B4600A23106 /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPicker.swift; sourceTree = "<group>"; };
 		D0251B442659441F00A23106 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		D055CFAE2674B4CD00280D89 /* RecommendCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCourseView.swift; sourceTree = "<group>"; };
+		D055CFB22674F29700280D89 /* RecommendMajorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMajorCell.swift; sourceTree = "<group>"; };
 		D09C7A7726691A0F0018C280 /* MainScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainScreens.storyboard; path = Storyboard/MainScreens.storyboard; sourceTree = "<group>"; };
 		D09C7A7826691A0F0018C280 /* CourseScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CourseScreens.storyboard; path = Storyboard/CourseScreens.storyboard; sourceTree = "<group>"; };
 		D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RegisterCourse.storyboard; path = Storyboard/RegisterCourse.storyboard; sourceTree = "<group>"; };
@@ -406,6 +416,7 @@
 				04A1C93D25F0E04400D270A1 /* CourseInfoViewController.swift */,
 				049B0E1E261DA87200272C05 /* DeadlineViewController.swift */,
 				D0C459B4266B7B150053281C /* PDFViewController.swift */,
+				D01462F926750AB5007639A0 /* MajorInfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -431,6 +442,7 @@
 				04B8FF2025F75DFA0070A212 /* Notification.swift */,
 				040306B025FB1FFD0058A6CD /* Document.swift */,
 				0401C9D12622862B00259402 /* Subject.swift */,
+				D01462F72674FB10007639A0 /* Major.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +483,7 @@
 				049B0E22261DB24400272C05 /* FileLinkTableCell.swift */,
 				048BEBD1261EEC1600D0D99E /* RegisterCourseTableCell.swift */,
 				04E33EB7262494A800D0E30A /* ConfirmRegisterCourseCell.swift */,
+				D007C0E42675AA50005FFF28 /* RecommendTableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -574,6 +587,8 @@
 				04DB50F125E4A994004B4C9C /* HomeViewModel.swift */,
 				04D648A425EE3C89007D43AF /* TabBarController.swift */,
 				043549162609D0AF00F75F51 /* LaunchViewController.swift */,
+				D055CFAE2674B4CD00280D89 /* RecommendCourseView.swift */,
+				D055CFB22674F29700280D89 /* RecommendMajorCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -893,6 +908,7 @@
 				048574FC262489E800821BCC /* RegisterCourseManager.swift in Sources */,
 				D09C7A84266929950018C280 /* NotificationCell.swift in Sources */,
 				04503A5425EF36B9007A4A81 /* ScheduleViewController.swift in Sources */,
+				D01462F82674FB10007639A0 /* Major.swift in Sources */,
 				0401C9D22622862B00259402 /* Subject.swift in Sources */,
 				0489500E25ED40F50069C559 /* AccountViewModel.swift in Sources */,
 				04DB50B925E4A8F6004B4C9C /* Study_Saga.xcdatamodeld in Sources */,
@@ -900,11 +916,13 @@
 				0499142B2613184F005E3726 /* StateView.swift in Sources */,
 				0489501425ED412F0069C559 /* AccountManager.swift in Sources */,
 				04DB50F225E4A994004B4C9C /* HomeViewModel.swift in Sources */,
+				D007C0E52675AA50005FFF28 /* RecommendTableCell.swift in Sources */,
 				04AF6E3125EA05410092429E /* HomeWeekBar.swift in Sources */,
 				0485750126248C4900821BCC /* ConfirmRegisterViewController.swift in Sources */,
 				044579EB2605A94A00D5365C /* NetworkManager.swift in Sources */,
 				04894FEC25ECE82C0069C559 /* UIButtonExtensions.swift in Sources */,
 				049B0E23261DB24400272C05 /* FileLinkTableCell.swift in Sources */,
+				D055CFAF2674B4CD00280D89 /* RecommendCourseView.swift in Sources */,
 				04886D2E26244FCD002C733B /* RegisterCourseInfoViewController.swift in Sources */,
 				04AF6E5E25EA1B390092429E /* HomeViewController.swift in Sources */,
 				04DB50F825E4AA96004B4C9C /* UIViewExtensions.swift in Sources */,
@@ -916,6 +934,7 @@
 				0489500925ED362C0069C559 /* AccountViewController.swift in Sources */,
 				048BEBD2261EEC1600D0D99E /* RegisterCourseTableCell.swift in Sources */,
 				04D34C5D25FA1BAF001044E8 /* SSTextField.swift in Sources */,
+				D01462FA26750AB5007639A0 /* MajorInfoViewController.swift in Sources */,
 				0489500125ED2B520069C559 /* DampingButton.swift in Sources */,
 				040306B525FB73D40058A6CD /* CheckInViewController.swift in Sources */,
 				042A66A125F8BBC60084629F /* JoinMeetingViewController.swift in Sources */,
@@ -923,6 +942,7 @@
 				04AF6E4D25EA104F0092429E /* DateEntity.swift in Sources */,
 				04A1C92825F0B7B800D270A1 /* Course.swift in Sources */,
 				0499142F26131D38005E3726 /* UIImageExtensions.swift in Sources */,
+				D055CFB32674F29700280D89 /* RecommendMajorCell.swift in Sources */,
 				04D648A525EE3C89007D43AF /* TabBarController.swift in Sources */,
 				04C1A68025EF78D9003A7AAA /* Lesson.swift in Sources */,
 				D09C7A82266928D60018C280 /* NotificationViewController.swift in Sources */,

@@ -16,17 +16,16 @@ extension Date {
         return dateformat.string(from: self)
     }
     
-    static func getDateDiff(time1: TimeInterval, time2: TimeInterval) -> String {
-        let cal = Calendar.current
-        let date1 = Date(timeIntervalSince1970: time1)
-        let date2 = Date(timeIntervalSince1970: time2)
-        let components = cal.dateComponents([.day, .hour, .minute], from: date2, to: date1)
+    func distanceTo(_ date2: Date) -> String {
+        let distance = abs(self.distance(to: date2))
+        let dayDistance = ceil(distance / (3600*24));
+        let minDistance = (distance - (dayDistance * 3600*24)) / 60
         
-        let date = cal.date(from: components)!
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd hh:MM"
-        let dateString = formatter.string(from: date)
-        return dateString
+        if dayDistance > 0 {
+            return "\(Int(dayDistance)) ngày"
+        } else {
+            return "\(Int(minDistance)) phút"
+        }
     }
 }
 

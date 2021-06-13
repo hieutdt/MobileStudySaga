@@ -12,10 +12,9 @@ class HomeViewModel: NSObject, ObservableObject {
 
     @Published var userName: String = ""
     @Published var avatarUrl: String = ""
-    
     @Published var deadlines: [Deadline] = []
-    
     @Published var comingLesson: Lesson?
+    @Published var majors: [Major] = []
     
     var cancellables = Set<AnyCancellable>()
     
@@ -73,6 +72,13 @@ class HomeViewModel: NSObject, ObservableObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 completion(isSuccess)
             }
+        }
+    }
+    
+    func fetchRecommendMajors(_ completion: @escaping () -> Void) {
+        CoursesManager.manager.getRecommendMajors { majors in
+            self.majors = majors
+            completion()
         }
     }
 }

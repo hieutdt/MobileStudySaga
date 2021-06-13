@@ -190,4 +190,50 @@ class CoursesManager: NSObject, ObservableObject {
             completion(course)
         }
     }
+    
+    func getRecommendMajors(_ completion: @escaping ([Major]) -> Void) {
+        guard let token = AccountManager.manager.cachingToken else {
+            completion([])
+            return
+        }
+        
+        let url = "\(kDomain)/api/rasa/recommend"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token)",
+            "Accept": "*/*"
+        ]
+        
+        AF.request(
+            url,
+            method: .get,
+            parameters: [:],
+            encoding: URLEncoding.default,
+            headers: headers) { urlRequest in
+            urlRequest.timeoutInterval = 5
+            urlRequest.allowsConstrainedNetworkAccess = true
+        }
+        .responseJSON { response in
+            if let value = response.value as? [String: Any] {
+                let status = value.intValueForKey("response_code")
+                if status == RESPONSE_STATUS_OK {
+                    let data = value.dictionaryForKey("data")
+                    let listMajor = data.arrayDictForKey("listMajor")
+                    
+                    var result: [Major] = []
+                    
+                    for majorDict in listMajor {
+                        let major = Major(from: majorDict)
+                        result.append(major)
+                    }
+                    
+                    completion(result)
+                    
+                } else {
+                    completion([])
+                }
+            } else {
+                completion([])
+            }
+        }
+    }
 }

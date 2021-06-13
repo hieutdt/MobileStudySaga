@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-Gj-4hf" userLabel="Content">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1079"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1305"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7K-w7-fJF" userLabel="HeaderView">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="180"/>
@@ -126,6 +126,12 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiến độ học tập Chuyên ngành" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9h-OA-SRH">
+                                                <rect key="frame" x="22.000000000000014" y="707.33333333333337" width="255.33333333333337" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="byW-b8-8OU">
                                                 <rect key="frame" x="20" y="477.33333333333326" width="388" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,7 +148,7 @@
                                                 <state key="normal" title="Xem tất cả"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2I-Ya-P0f" customClass="DampingButton" customModule="Study_Saga" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="692.33333333333337" width="388" height="336.66666666666663"/>
+                                                <rect key="frame" x="20" y="918.33333333333337" width="388" height="336.66666666666663"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trải nghiệm học mọi lúc, mọi nơi, học bất cứ gì bạn muốn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXj-bE-5xV">
                                                         <rect key="frame" x="20" y="24.999999999999996" width="348" height="45.666666666666657"/>
@@ -209,23 +215,34 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-au-aid" customClass="RecommendCourseView" customModule="Study_Saga" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="738.33333333333337" width="428" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="1IS-Mc-fIG"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="KE3-bB-QrS" firstAttribute="leading" secondItem="z3H-mD-Lj7" secondAttribute="trailing" constant="20" id="1vQ-Hc-VbR"/>
                                             <constraint firstItem="bhI-q6-lEm" firstAttribute="top" secondItem="WMz-jz-GyK" secondAttribute="bottom" constant="40" id="1zG-ma-j0f"/>
+                                            <constraint firstItem="YZT-au-aid" firstAttribute="leading" secondItem="3eE-Gj-4hf" secondAttribute="leading" id="3sS-A3-JYN"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="250" id="4Mw-KI-cIa"/>
                                             <constraint firstItem="WMz-jz-GyK" firstAttribute="top" secondItem="m7K-w7-fJF" secondAttribute="bottom" id="7xz-AU-uxC"/>
                                             <constraint firstItem="Rgo-eC-Flh" firstAttribute="top" secondItem="FXH-lY-bJO" secondAttribute="bottom" constant="25" id="86I-n9-0ZO"/>
+                                            <constraint firstItem="YZT-au-aid" firstAttribute="top" secondItem="L9h-OA-SRH" secondAttribute="bottom" constant="10" id="8PP-d1-660"/>
                                             <constraint firstItem="gGf-KY-zxh" firstAttribute="top" secondItem="KE3-bB-QrS" secondAttribute="bottom" constant="5" id="9he-9u-4iK"/>
                                             <constraint firstItem="M7C-9s-E6Q" firstAttribute="top" secondItem="gGf-KY-zxh" secondAttribute="bottom" constant="20" id="CS3-CE-uAb"/>
                                             <constraint firstItem="m7K-w7-fJF" firstAttribute="top" secondItem="3eE-Gj-4hf" secondAttribute="top" id="DKj-Cz-qus"/>
                                             <constraint firstAttribute="trailing" secondItem="WMz-jz-GyK" secondAttribute="trailing" constant="20" id="EMQ-V7-sFu"/>
                                             <constraint firstItem="byW-b8-8OU" firstAttribute="leading" secondItem="3eE-Gj-4hf" secondAttribute="leading" constant="20" id="EkC-d3-tla"/>
+                                            <constraint firstItem="L9h-OA-SRH" firstAttribute="top" secondItem="byW-b8-8OU" secondAttribute="bottom" constant="30" id="F20-jW-XBi"/>
                                             <constraint firstItem="z3H-mD-Lj7" firstAttribute="leading" secondItem="3eE-Gj-4hf" secondAttribute="leading" constant="20" id="GUm-wy-sJc"/>
                                             <constraint firstAttribute="trailing" secondItem="byW-b8-8OU" secondAttribute="trailing" constant="20" id="HMW-Ot-dec"/>
                                             <constraint firstItem="M7C-9s-E6Q" firstAttribute="top" secondItem="z3H-mD-Lj7" secondAttribute="bottom" constant="20" id="JSu-ey-xfJ"/>
+                                            <constraint firstItem="k2I-Ya-P0f" firstAttribute="top" secondItem="YZT-au-aid" secondAttribute="bottom" constant="30" id="JTi-ls-7Rz"/>
                                             <constraint firstItem="FXH-lY-bJO" firstAttribute="top" secondItem="m7K-w7-fJF" secondAttribute="bottom" id="LCa-3h-V8z"/>
                                             <constraint firstItem="bhI-q6-lEm" firstAttribute="leading" secondItem="3eE-Gj-4hf" secondAttribute="leading" constant="22" id="LfD-kA-MgJ"/>
                                             <constraint firstAttribute="trailing" secondItem="k2I-Ya-P0f" secondAttribute="trailing" constant="20" id="NaN-xA-4yx"/>
@@ -237,8 +254,9 @@
                                             <constraint firstItem="k2I-Ya-P0f" firstAttribute="leading" secondItem="3eE-Gj-4hf" secondAttribute="leading" constant="20" id="a9I-e5-yac"/>
                                             <constraint firstAttribute="trailing" secondItem="Rgo-eC-Flh" secondAttribute="trailing" constant="20" id="eLz-ey-oxo"/>
                                             <constraint firstItem="Rgo-eC-Flh" firstAttribute="centerY" secondItem="bhI-q6-lEm" secondAttribute="centerY" id="fDs-bo-bto"/>
-                                            <constraint firstItem="k2I-Ya-P0f" firstAttribute="top" secondItem="byW-b8-8OU" secondAttribute="bottom" constant="15" id="hc5-MH-tWk"/>
+                                            <constraint firstAttribute="trailing" secondItem="YZT-au-aid" secondAttribute="trailing" id="hLW-oI-ROP"/>
                                             <constraint firstAttribute="bottom" secondItem="k2I-Ya-P0f" secondAttribute="bottom" constant="50" id="kdr-N2-HQB"/>
+                                            <constraint firstItem="L9h-OA-SRH" firstAttribute="leading" secondItem="3eE-Gj-4hf" secondAttribute="leading" constant="22" id="ogo-2a-9x6"/>
                                             <constraint firstItem="FXH-lY-bJO" firstAttribute="leading" secondItem="3eE-Gj-4hf" secondAttribute="leading" constant="20" id="qtT-nz-HiE"/>
                                             <constraint firstItem="m7K-w7-fJF" firstAttribute="leading" secondItem="3eE-Gj-4hf" secondAttribute="leading" id="xVW-2f-fCp"/>
                                         </constraints>
@@ -280,6 +298,7 @@
                         <outlet property="openCourseButton" destination="k2I-Ya-P0f" id="Yss-5O-Q9a"/>
                         <outlet property="openCourseDummyButton" destination="pGG-xm-3pu" id="cFf-s7-nmC"/>
                         <outlet property="openCourseImageView" destination="aAh-b4-FpP" id="0dv-DB-uDK"/>
+                        <outlet property="recommendCourseView" destination="YZT-au-aid" id="QeK-xn-2te"/>
                         <outlet property="scrollView" destination="tkf-Ow-bkQ" id="Wca-m0-m0y"/>
                         <outlet property="showAllDeadlineButton" destination="Rgo-eC-Flh" id="Cba-3E-E6h"/>
                     </connections>

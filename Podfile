@@ -15,8 +15,7 @@ target 'Study Saga' do
   pod "SkeletonView"
   pod 'TweeTextField'
   pod 'FileKit'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Messaging'
+  pod 'Charts'
   
   target 'Study SagaTests' do
     inherit! :search_paths

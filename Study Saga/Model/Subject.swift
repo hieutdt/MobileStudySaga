@@ -18,6 +18,7 @@ class Subject: NSObject {
     var dateCreated: TimeInterval = 0
     var name: String = ""
     var detail: String = ""
+    var isLearned: Bool = false
     
     var courses: [Course] = []
 }
@@ -30,6 +31,7 @@ extension Subject {
         self.sesmester = json.intValueForKey("sesmester")
         self.name = json.stringValueForKey("name")
         self.detail = json.stringValueForKey("detail")
+        self.isLearned = json.boolValueForKey("isLearned")
         let courses = json.arrayDictForKey("courses")
         for courseDict in courses {
             var course = Course(from: courseDict)

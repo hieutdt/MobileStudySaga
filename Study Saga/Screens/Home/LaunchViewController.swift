@@ -14,10 +14,10 @@ class LaunchViewController: UIViewController {
     
     let appNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SVN-Gilroy Bold", size: 40)
-        label.textColor = .white
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 36)
+        label.textColor = .primary
         label.textAlignment = .center
-        label.text = "STUDY SAGA"
+        label.text = "Study Saga"
         return label
     }()
     
@@ -25,7 +25,7 @@ class LaunchViewController: UIViewController {
     
     var logoImgView: UIImageView = {
         let imgView = UIImageView()
-        imgView.image = UIImage(named: "plane_paper")
+        imgView.image = UIImage(named: "paper_plane")
         return imgView
     }()
     
@@ -51,8 +51,9 @@ class LaunchViewController: UIViewController {
         
         container.addSubview(logoImgView)
         logoImgView.mas_makeConstraints { make in
+            make?.top.equalTo()(container.mas_top)
+            make?.size.equalTo()(150)
             make?.centerX.equalTo()(container.mas_centerX)
-            make?.size.equalTo()(200)
         }
         
         container.addSubview(appNameLabel)
