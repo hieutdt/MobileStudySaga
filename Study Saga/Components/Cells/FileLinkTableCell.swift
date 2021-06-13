@@ -30,7 +30,7 @@ class FileLinkTableCell: UITableViewCell {
     
     weak var delegate: FileLinkTableCellDelegate? = nil
     
-    var document: Document? {
+    var document: DocumentModel? {
         didSet {
             if let document = self.document {
                 if document.type == .docx {

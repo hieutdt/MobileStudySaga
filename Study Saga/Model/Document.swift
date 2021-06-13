@@ -16,7 +16,7 @@ enum DocumentType: Int {
     case url
 }
 
-struct Document: Hashable {
+struct DocumentModel: Hashable {
     
     var id: String = UUID().uuidString
     var type: DocumentType = .unknown
@@ -24,12 +24,12 @@ struct Document: Hashable {
     var downloaded: Bool = false
     var path: String = ""
     
-    static func == (lhs: Document, rhs: Document) -> Bool {
+    static func == (lhs: DocumentModel, rhs: DocumentModel) -> Bool {
         return lhs.id == rhs.id
     }
 }
 
-extension Document {
+extension DocumentModel {
     init(from dict: [String: Any]) {
         self.id = dict.stringValueForKey("_id")
         self.name = dict.stringValueForKey("name")

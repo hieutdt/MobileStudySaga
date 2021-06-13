@@ -10,6 +10,9 @@ PODS:
   - Masonry (1.1.0)
   - PanModal (1.2.7)
   - SkeletonView (1.13.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
   - SVProgressHUD (2.2.5)
   - TweeTextField (1.6.3)
 
@@ -22,6 +25,7 @@ DEPENDENCIES:
   - Masonry
   - PanModal
   - SkeletonView
+  - SQLite.swift (~> 0.12.0)
   - SVProgressHUD
   - TweeTextField
 
@@ -35,6 +39,7 @@ SPEC REPOS:
     - Masonry
     - PanModal
     - SkeletonView
+    - SQLite.swift
     - SVProgressHUD
     - TweeTextField
 
@@ -47,9 +52,10 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   SkeletonView: 2b14cb767a7da384d17d5d7e1db0d55a6cf9566a
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TweeTextField: 47bf8e7f0433364a7f7e119c45e7f278ea50eb62
 
-PODFILE CHECKSUM: deb33dcbf9a249371b3522e75cd59f4b190f3e02
+PODFILE CHECKSUM: c7ebd536b09de2bd16e226c051b24842e01312b8
 
 COCOAPODS: 1.10.1

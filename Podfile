@@ -16,6 +16,7 @@ target 'Study Saga' do
   pod 'TweeTextField'
   pod 'FileKit'
   pod 'Charts'
+  pod 'SQLite.swift', '~> 0.12.0'
   
   target 'Study SagaTests' do
     inherit! :search_paths

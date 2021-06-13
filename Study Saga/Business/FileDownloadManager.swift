@@ -19,6 +19,21 @@ enum FileDownloadError: Error {
     case urlError
 }
 
+class Utils {
+    internal static func tempDirectory() throws -> Path {
+        return try self.directoryInsideDocumentsWithName(name: "temp")
+    }
+    
+    internal static func directoryInsideDocumentsWithName(name: String, create: Bool = true) throws -> Path {
+        let directory = Path(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]) + name
+        if create && !directory.exists {
+            try directory.createDirectory()
+        }
+        return directory
+    }
+}
+
+
 final class FileDownloadManager: NSObject {
     
     static let manager = FileDownloadManager()
@@ -59,18 +74,4 @@ final class FileDownloadManager: NSObject {
             completionBlock("", .urlError)
         }
     }
-}
-
-class Utils {
-  internal static func tempDirectory() throws -> Path {
-    return try self.directoryInsideDocumentsWithName(name: "temp")
-  }
-
-  internal static func directoryInsideDocumentsWithName(name: String, create: Bool = true) throws -> Path {
-   let directory = Path(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]) + name
-   if create && !directory.exists {
-     try directory.createDirectory()
-   }
-   return directory
-  }
 }

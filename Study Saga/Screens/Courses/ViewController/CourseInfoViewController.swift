@@ -210,8 +210,8 @@ class CourseInfoViewController: UIViewController {
         }
         .makeConnectable()
     
-    typealias DocumentDataSource = UITableViewDiffableDataSource<Int, Document>
-    typealias DocumentSnapshot = NSDiffableDataSourceSnapshot<Int, Document>
+    typealias DocumentDataSource = UITableViewDiffableDataSource<Int, DocumentModel>
+    typealias DocumentSnapshot = NSDiffableDataSourceSnapshot<Int, DocumentModel>
     private lazy var updateDocumentDataSourcePublisher = self.viewModel.$course
         .map { course -> DocumentSnapshot in
             var snapshot = DocumentSnapshot()

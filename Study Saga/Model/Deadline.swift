@@ -23,8 +23,8 @@ struct Deadline: Hashable {
     var timeStart: TimeInterval = 0
     var timeEnd: TimeInterval = 0
     
-    var deadlineDocuments: [Document] = []
-    var submitDocuments: [Document] = []
+    var deadlineDocuments: [DocumentModel] = []
+    var submitDocuments: [DocumentModel] = []
 }
 
 extension Deadline {

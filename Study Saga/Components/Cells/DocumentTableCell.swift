@@ -30,7 +30,7 @@ class DocumentTableCell: UITableViewCell {
     
     weak var delegate: DocumentTableCellDelegate? = nil
     
-    var model: Document? {
+    var model: DocumentModel? {
         didSet {
             if let model = self.model {
                 nameLbl.text = model.name

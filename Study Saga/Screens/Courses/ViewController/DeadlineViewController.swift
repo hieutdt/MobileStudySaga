@@ -50,14 +50,14 @@ class DeadlineViewController: UIViewController {
         super.viewDidLoad()
         
         for _ in 0 ... 5 {
-            var doc = Document()
+            var doc = DocumentModel()
             doc.type = .pdf
             doc.name = "YeuCauBaiTap1.pdf"
             self.deadline.deadlineDocuments.append(doc)
         }
         
         for _ in 0...1 {
-            var doc = Document()
+            var doc = DocumentModel()
             doc.type = .pdf
             doc.name = "1712441_Baitap1.pdf"
             self.deadline.submitDocuments.append(doc)

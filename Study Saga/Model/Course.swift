@@ -36,7 +36,7 @@ struct Course: Hashable {
     var lessons: [Lesson] = []
     var deadlines: [Deadline] = []
     var notifications: [Notification] = []
-    var documents: [Document] = []
+    var documents: [DocumentModel] = []
     
     var score: CGFloat = 0
     var sesmester: Int = 0
@@ -103,7 +103,7 @@ extension Course {
         self.documents = []
         let documentDicts = json.arrayDictForKey("documents")
         for dict in documentDicts {
-            let doc = Document(from: dict)
+            let doc = DocumentModel(from: dict)
             self.documents.append(doc)
         }
     }
