@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Study Saga muốn truy cập ứng dụng Lịch để thêm tiết học.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Ứng dụng muốn sử dụng Thư viện ảnh của bạn.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Bạn cần cấp quyền truy cập microphone để vào buổi học. Lưu ý: Mic của bạn sẽ mặc định tắt khi bạn tham dự.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Bạn cần cấp quyền truy cập camera để vào buổi học. Lưu ý: Camera của bạn sẽ mặc định bật khi bạn tham dự buổi học.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -28,6 +20,19 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Study Saga muốn truy cập ứng dụng Lịch để thêm tiết học.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Bạn cần cấp quyền truy cập camera để vào buổi học. Lưu ý: Camera của bạn sẽ mặc định bật khi bạn tham dự buổi học.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Bạn cần cấp quyền truy cập microphone để vào buổi học. Lưu ý: Mic của bạn sẽ mặc định tắt khi bạn tham dự.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Ứng dụng muốn sử dụng Thư viện ảnh của bạn.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -49,10 +54,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

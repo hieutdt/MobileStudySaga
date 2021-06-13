@@ -34,10 +34,7 @@ class PDFViewController: UIViewController {
         headerBar.addSubview(backBtn)
         backBtn.tintColor = .white
         backBtn.addTarget(self, action: #selector(backBtnTapped), for: .touchUpInside)
-        backBtn.setImage(
-            UIImage(systemName: "chevron.left")?.withRenderingMode(.alwaysTemplate),
-            for: .normal
-        )
+        backBtn.setImage(UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate), for: .normal)
         backBtn.mas_makeConstraints { make in
             make?.leading.equalTo()(headerBar.mas_leading)?.offset()(10)
             make?.bottom.equalTo()(headerBar.mas_bottom)?.offset()(-10)
@@ -46,7 +43,7 @@ class PDFViewController: UIViewController {
         
         headerBar.addSubview(titleLbl)
         titleLbl.textColor = .white
-        titleLbl.font = .systemFont(ofSize: 17)
+        titleLbl.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
         titleLbl.text = self.titleText
         titleLbl.mas_makeConstraints { make in
             make?.leading.equalTo()(headerBar.mas_leading)?.offset()(50)
@@ -73,5 +70,10 @@ class PDFViewController: UIViewController {
     
     @objc func backBtnTapped() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.headerBar.createViewBackgroundWithAppGradient()
     }
 }

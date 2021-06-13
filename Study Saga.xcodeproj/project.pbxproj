@@ -106,6 +106,11 @@
 		D09C7A84266929950018C280 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A83266929950018C280 /* NotificationCell.swift */; };
 		D09C7A86266929BA0018C280 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A85266929BA0018C280 /* NotificationModel.swift */; };
 		D09C7A8826692FFC0018C280 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */; };
+		D0AF9F352675F3B9009AED14 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9F342675F3B9009AED14 /* ChatViewController.swift */; };
+		D0AF9F372675F3D0009AED14 /* ReceiveMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9F362675F3D0009AED14 /* ReceiveMessageCell.swift */; };
+		D0AF9F392675F416009AED14 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9F382675F416009AED14 /* Message.swift */; };
+		D0AF9F3B2675FB70009AED14 /* SendMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9F3A2675FB70009AED14 /* SendMessageCell.swift */; };
+		D0AF9F3E26760294009AED14 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9F3D26760294009AED14 /* ChatViewModel.swift */; };
 		D0C459B1266B665E0053281C /* FileDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C459B0266B665E0053281C /* FileDownloadManager.swift */; };
 		D0C459B3266B78BC0053281C /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C459B2266B78BC0053281C /* PDFKit.framework */; };
 		D0C459B5266B7B150053281C /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C459B4266B7B150053281C /* PDFViewController.swift */; };
@@ -256,6 +261,11 @@
 		D09C7A83266929950018C280 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		D09C7A85266929BA0018C280 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		D0AF9F342675F3B9009AED14 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D0AF9F362675F3D0009AED14 /* ReceiveMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMessageCell.swift; sourceTree = "<group>"; };
+		D0AF9F382675F416009AED14 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D0AF9F3A2675FB70009AED14 /* SendMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageCell.swift; sourceTree = "<group>"; };
+		D0AF9F3D26760294009AED14 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		D0C459B0266B665E0053281C /* FileDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadManager.swift; sourceTree = "<group>"; };
 		D0C459B2266B78BC0053281C /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		D0C459B4266B7B150053281C /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
@@ -443,6 +453,7 @@
 				040306B025FB1FFD0058A6CD /* Document.swift */,
 				0401C9D12622862B00259402 /* Subject.swift */,
 				D01462F72674FB10007639A0 /* Major.swift */,
+				D0AF9F382675F416009AED14 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -570,6 +581,7 @@
 		04DB50E725E4A935004B4C9C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D0AF9F332675F3A8009AED14 /* ChatBot */,
 				D09C7A80266928C20018C280 /* Notification */,
 				048574FF26248C2200821BCC /* RegisterCourse */,
 				042A669F25F8BBB60084629F /* OnMeeting */,
@@ -642,6 +654,25 @@
 				D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		D0AF9F332675F3A8009AED14 /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				D0AF9F3C26760286009AED14 /* Cell */,
+				D0AF9F342675F3B9009AED14 /* ChatViewController.swift */,
+				D0AF9F3D26760294009AED14 /* ChatViewModel.swift */,
+			);
+			path = ChatBot;
+			sourceTree = "<group>";
+		};
+		D0AF9F3C26760286009AED14 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D0AF9F362675F3D0009AED14 /* ReceiveMessageCell.swift */,
+				D0AF9F3A2675FB70009AED14 /* SendMessageCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -906,6 +937,7 @@
 				0486516225FA6B0900F28579 /* DocumentTableCell.swift in Sources */,
 				0466256726146ACB008E0133 /* StudyResultViewController.swift in Sources */,
 				048574FC262489E800821BCC /* RegisterCourseManager.swift in Sources */,
+				D0AF9F392675F416009AED14 /* Message.swift in Sources */,
 				D09C7A84266929950018C280 /* NotificationCell.swift in Sources */,
 				04503A5425EF36B9007A4A81 /* ScheduleViewController.swift in Sources */,
 				D01462F82674FB10007639A0 /* Major.swift in Sources */,
@@ -925,6 +957,7 @@
 				D055CFAF2674B4CD00280D89 /* RecommendCourseView.swift in Sources */,
 				04886D2E26244FCD002C733B /* RegisterCourseInfoViewController.swift in Sources */,
 				04AF6E5E25EA1B390092429E /* HomeViewController.swift in Sources */,
+				D0AF9F3B2675FB70009AED14 /* SendMessageCell.swift in Sources */,
 				04DB50F825E4AA96004B4C9C /* UIViewExtensions.swift in Sources */,
 				D0251B412659254200A23106 /* DateExtensions.swift in Sources */,
 				0436296F26084EFB00F639C1 /* AppAlert.swift in Sources */,
@@ -959,6 +992,7 @@
 				0433FC0A260C862A002323B6 /* UpdateInfoViewController.swift in Sources */,
 				042A669125F8B41E0084629F /* ShadowView.swift in Sources */,
 				047832AF25F60B8B001DE828 /* LessonCollectionCell.swift in Sources */,
+				D0AF9F3E26760294009AED14 /* ChatViewModel.swift in Sources */,
 				043CC3B825EDFEB700790514 /* LogInViewController.swift in Sources */,
 				04E33EB8262494A800D0E30A /* ConfirmRegisterCourseCell.swift in Sources */,
 				04A1C92325F0924400D270A1 /* CourseTableCell.swift in Sources */,
@@ -976,7 +1010,9 @@
 				0415EC4626009B4700195246 /* ZoomSettingViewController.swift in Sources */,
 				04C1A67B25EF7783003A7AAA /* ScheduleViewModel.swift in Sources */,
 				D09C7A86266929BA0018C280 /* NotificationModel.swift in Sources */,
+				D0AF9F372675F3D0009AED14 /* ReceiveMessageCell.swift in Sources */,
 				043F2225260B2A790099A704 /* RegisterCourseViewController.swift in Sources */,
+				D0AF9F352675F3B9009AED14 /* ChatViewController.swift in Sources */,
 				0435491B2609D5A700F75F51 /* MeetingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -146,3 +146,46 @@ extension String {
         return String(hmacBase64)
     }
 }
+
+fileprivate let urlDetector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+
+extension String {
+    static var empty = ""
+    
+    var isUrl: Bool {
+        guard let match = urlDetector.firstMatch(
+            in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) else {
+                return false
+        }
+        return match.range.length == self.utf16.count
+    }
+    
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect,
+                                            options: .usesLineFragmentOrigin,
+                                            attributes: [.font : font],
+                                            context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintRect,
+                                            options: .usesLineFragmentOrigin,
+                                            attributes: [.font : font],
+                                            context: nil)
+        
+        return ceil(boundingBox.width)
+    }
+    
+    /// Returns `nil` if the provided String is empty.
+    init?(nullish: String) {
+        if nullish.isEmpty {
+            return nil
+        }
+        
+        self = nullish
+    }
+}
