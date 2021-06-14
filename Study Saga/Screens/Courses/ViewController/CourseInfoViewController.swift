@@ -536,7 +536,9 @@ extension CourseInfoViewController: FileLinkTableCellDelegate {
                         
                         AppLoading.showSuccess(with: "Tải thành công", viewController: self)
                         
+                        document.courseName = self.course!.className
                         UserDefaults.standard.setValue(url, forKey: document.id)
+                        DBManager.manager.saveDocumentInfoToDB(document)
                         
                         self.openDocumentWithName(document.name, urlString: url) {
                             UserDefaults.standard.removeObject(forKey: document.id)

@@ -92,6 +92,7 @@
 		3A335CC880F263A53E737774 /* Pods_Study_Saga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E8E2AC11D409C9E10B6072 /* Pods_Study_Saga.framework */; };
 		D007C0E52675AA50005FFF28 /* RecommendTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D007C0E42675AA50005FFF28 /* RecommendTableCell.swift */; };
 		D0111B602676156300458D1E /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0111B5F2676156300458D1E /* DBManager.swift */; };
+		D0111B6326763B9E00458D1E /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0111B6226763B9E00458D1E /* DocumentsViewController.swift */; };
 		D01462F82674FB10007639A0 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01462F72674FB10007639A0 /* Major.swift */; };
 		D01462FA26750AB5007639A0 /* MajorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01462F926750AB5007639A0 /* MajorInfoViewController.swift */; };
 		D0251B412659254200A23106 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B402659254200A23106 /* DateExtensions.swift */; };
@@ -107,6 +108,7 @@
 		D09C7A84266929950018C280 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A83266929950018C280 /* NotificationCell.swift */; };
 		D09C7A86266929BA0018C280 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A85266929BA0018C280 /* NotificationModel.swift */; };
 		D09C7A8826692FFC0018C280 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */; };
+		D0A4105326778CA900D01925 /* DBDocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4105226778CA900D01925 /* DBDocumentCell.swift */; };
 		D0AF9F352675F3B9009AED14 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9F342675F3B9009AED14 /* ChatViewController.swift */; };
 		D0AF9F372675F3D0009AED14 /* ReceiveMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9F362675F3D0009AED14 /* ReceiveMessageCell.swift */; };
 		D0AF9F392675F416009AED14 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF9F382675F416009AED14 /* Message.swift */; };
@@ -248,6 +250,7 @@
 		C7807A9B270D57AF6195D47B /* Pods_Study_Saga_Study_SagaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_Saga_Study_SagaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D007C0E42675AA50005FFF28 /* RecommendTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendTableCell.swift; path = "Study Saga/Components/RecommendTableCell.swift"; sourceTree = SOURCE_ROOT; };
 		D0111B5F2676156300458D1E /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		D0111B6226763B9E00458D1E /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		D01462F72674FB10007639A0 /* Major.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major.swift; sourceTree = "<group>"; };
 		D01462F926750AB5007639A0 /* MajorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorInfoViewController.swift; sourceTree = "<group>"; };
 		D0251B402659254200A23106 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		D09C7A83266929950018C280 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		D09C7A85266929BA0018C280 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		D09C7A8726692FFC0018C280 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		D0A4105226778CA900D01925 /* DBDocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDocumentCell.swift; sourceTree = "<group>"; };
 		D0AF9F342675F3B9009AED14 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D0AF9F362675F3D0009AED14 /* ReceiveMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMessageCell.swift; sourceTree = "<group>"; };
 		D0AF9F382675F416009AED14 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -500,6 +504,7 @@
 				048BEBD1261EEC1600D0D99E /* RegisterCourseTableCell.swift */,
 				04E33EB7262494A800D0E30A /* ConfirmRegisterCourseCell.swift */,
 				D007C0E42675AA50005FFF28 /* RecommendTableCell.swift */,
+				D0A4105226778CA900D01925 /* DBDocumentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 		04DB50E725E4A935004B4C9C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D0111B6126763B8D00458D1E /* Document */,
 				D0AF9F332675F3A8009AED14 /* ChatBot */,
 				D09C7A80266928C20018C280 /* Notification */,
 				048574FF26248C2200821BCC /* RegisterCourse */,
@@ -648,6 +654,14 @@
 				BB8862F9A61C80366E857A2C /* Pods_Study_SagaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0111B6126763B8D00458D1E /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				D0111B6226763B9E00458D1E /* DocumentsViewController.swift */,
+			);
+			path = Document;
 			sourceTree = "<group>";
 		};
 		D09C7A80266928C20018C280 /* Notification */ = {
@@ -942,6 +956,7 @@
 				049B0E1F261DA87200272C05 /* DeadlineViewController.swift in Sources */,
 				044FAFDF260DDFD1007B0581 /* EmptyDeadlinesView.swift in Sources */,
 				04AF6E6E25EA275E0092429E /* DeadlineTableCell.swift in Sources */,
+				D0111B6326763B9E00458D1E /* DocumentsViewController.swift in Sources */,
 				04362975260897AB00F639C1 /* ZoomAccountStatusViewController.swift in Sources */,
 				0454D8E725F08A53006DCB11 /* CourseManagerViewController.swift in Sources */,
 				04C1A67625EF3ECC003A7AAA /* ScheduleTableCell.swift in Sources */,
@@ -1012,6 +1027,7 @@
 				04A1C92325F0924400D270A1 /* CourseTableCell.swift in Sources */,
 				049096912626C1AE00B58035 /* RegisterHistoryViewController.swift in Sources */,
 				043549172609D0AF00F75F51 /* LaunchViewController.swift in Sources */,
+				D0A4105326778CA900D01925 /* DBDocumentCell.swift in Sources */,
 				043D573D25E4C03C002DB248 /* MainSearchBar.swift in Sources */,
 				04AF6E7E25EA2C0A0092429E /* Deadline.swift in Sources */,
 				04A1C93E25F0E04400D270A1 /* CourseInfoViewController.swift in Sources */,

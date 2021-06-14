@@ -71,6 +71,7 @@ class LogInViewController: UIViewController {
         self.documentManagerButton.setTitle("Quản lý tài liệu học tập", for: .normal)
         self.documentManagerButton.setTitleColor(.systemBlue, for: .normal)
         self.documentManagerButton.setTitleColor(.midnightBlue, for: .highlighted)
+        self.documentManagerButton.addTarget(self, action: #selector(documentManagerBtnTapped), for: .touchUpInside)
         self.view.addSubview(self.documentManagerButton)
         self.documentManagerButton.mas_makeConstraints { make in
             make?.bottom.equalTo()(self.view.mas_bottom)?.offset()(-40)
@@ -140,6 +141,12 @@ class LogInViewController: UIViewController {
     @objc func viewDidTap() {
         // Hide keyboard
         self.view.endEditing(true)
+    }
+    
+    @objc func documentManagerBtnTapped() {
+        let vc = DocumentsViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

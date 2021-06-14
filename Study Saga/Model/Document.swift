@@ -21,6 +21,7 @@ struct DocumentModel: Hashable {
     var id: String = UUID().uuidString
     var type: DocumentType = .unknown
     var name: String = ""
+    var courseName: String = ""
     var downloaded: Bool = false
     var path: String = ""
     
