@@ -56,14 +56,18 @@ class ReceiveMessageCell: UITableViewCell {
             
             // Update avatar
             avatarImgView.isHidden = !isTopMessage
-            if let url = URL(string: message.avatarUrl), isTopMessage {
-                avatarImgView.af.setImage(
-                    withURL: url,
-                    filter: CircleFilter()
-                )
-            } else {
-                avatarImgView.image = UIImage(named: "")
+            avatarImgView.contentMode = .scaleAspectFill
+            if isTopMessage {
+                avatarImgView.image = chatBotImg
             }
+//            if let url = URL(string: message.avatarUrl), isTopMessage {
+//                avatarImgView.af.setImage(
+//                    withURL: url,
+//                    filter: CircleFilter()
+//                )
+//            } else {
+//                avatarImgView.image = UIImage(named: "")
+//            }
             
             if isTopMessage {
                 bubbleHStack.alignment = .top

@@ -24,16 +24,17 @@ enum MessageDeliveryState: Int {
 }
 
 enum UIMessageType: Int {
-    case timeTitle
+    case tutorial
     case text
+    case typing
 }
 
 /// `Message` model to use in SwiftUI.
 ///  This model is converted from `MessageEntity`.
 struct Message: Hashable {
     var messageId: String
-    var roomId: String
-    var fromId: String
+    var roomId: String = ""
+    var fromId: String = ""
     var toIDs: [String]
     
     var time: TimeInterval = Date().timeIntervalSince1970
@@ -41,8 +42,8 @@ struct Message: Hashable {
     var message: String
     // var meta
     
-    var avatarUrl: String
-    var name: String
+    var avatarUrl: String = ""
+    var name: String = ""
     
     var type: UIMessageType = .text
     
@@ -69,5 +70,16 @@ struct Message: Hashable {
 extension Message: Identifiable {
     var id: String {
         self.messageId
+    }
+}
+
+extension Message {
+    init() {
+        self.messageId = UUID().uuidString
+        self.message = ""
+        self.time = Date().timeIntervalSince1970
+        self.type = .text
+        self.fromId = ""
+        self.toIDs = []
     }
 }

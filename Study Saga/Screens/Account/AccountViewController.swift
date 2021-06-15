@@ -23,9 +23,9 @@ class AccountViewController: UIViewController {
     
     @IBOutlet weak var editProfileButton: BaseButton!
     @IBOutlet weak var courseHistoryButton: BaseButton!
-    @IBOutlet weak var calendarButton: BaseButton!
     @IBOutlet weak var assignCoursesButton: BaseButton!
     @IBOutlet weak var registerCourseHIstoryButton: BaseButton!
+    @IBOutlet weak var fileManagerButton: BaseButton!
     
     @IBOutlet weak var logOutButton: BaseButton!
     
@@ -77,10 +77,11 @@ class AccountViewController: UIViewController {
         }
         
         self.courseHistoryButton.setButton(
-            title: "Kết quả học tập",
+            title: "Hỗ trợ học tập",
             iconName: "report_card",
             showNext: true) {
-            
+            let vc = ChatViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
         self.logOutButton.setButton(
@@ -125,9 +126,19 @@ class AccountViewController: UIViewController {
             title: "Lịch sử đăng ký",
             iconName: "history",
             showNext: true,
-            showLine: false) {
+            showLine: true  ) {
             // Open Register History screen.
             let vc = UIStoryboard.register.viewController(RegisterHistoryViewController.self)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        self.fileManagerButton.setButton(
+            title: "Tài liệu học tập",
+            desc: nil,
+            iconName: "file",
+            showNext: true,
+            showLine: false) {
+            let vc = DocumentsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

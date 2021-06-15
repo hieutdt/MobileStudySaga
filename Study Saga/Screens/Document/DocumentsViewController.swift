@@ -27,6 +27,8 @@ class DocumentsViewController: UIViewController {
         
         self.view.backgroundColor = .white
         
+        self.navigationController?.navigationBar.hide()
+        
         self.setUpHeaderBar()
         self.setUpTableView()
         self.createEmptyView()
@@ -95,7 +97,8 @@ class DocumentsViewController: UIViewController {
         
         headerView.addSubview(dismissBtn)
         dismissBtn.addTarget(self, action: #selector(dismissBtnDidTap), for: .touchUpInside)
-        dismissBtn.setImage(UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        let systemImageName = self.navigationController != nil ? "chevron.left" : "xmark"
+        dismissBtn.setImage(UIImage(systemName: systemImageName)?.withRenderingMode(.alwaysTemplate), for: .normal)
         dismissBtn.tintColor = .white
         dismissBtn.mas_makeConstraints { make in
             make?.leading.equalTo()(headerView.mas_leading)?.offset()(10)
@@ -133,7 +136,11 @@ class DocumentsViewController: UIViewController {
     }
     
     @objc func dismissBtnDidTap() {
-        self.dismiss(animated: true, completion: nil)
+        if self.navigationController != nil {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

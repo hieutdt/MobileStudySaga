@@ -100,6 +100,7 @@
 		D0251B452659441F00A23106 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0251B442659441F00A23106 /* EventKit.framework */; };
 		D055CFAF2674B4CD00280D89 /* RecommendCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D055CFAE2674B4CD00280D89 /* RecommendCourseView.swift */; };
 		D055CFB32674F29700280D89 /* RecommendMajorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D055CFB22674F29700280D89 /* RecommendMajorCell.swift */; };
+		D08CA2902678E8520016305F /* TurtorialMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CA28F2678E8520016305F /* TurtorialMessageCell.swift */; };
 		D09C7A7A26691A0F0018C280 /* MainScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7726691A0F0018C280 /* MainScreens.storyboard */; };
 		D09C7A7B26691A0F0018C280 /* CourseScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7826691A0F0018C280 /* CourseScreens.storyboard */; };
 		D09C7A7C26691A0F0018C280 /* RegisterCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */; };
@@ -258,6 +259,7 @@
 		D0251B442659441F00A23106 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		D055CFAE2674B4CD00280D89 /* RecommendCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCourseView.swift; sourceTree = "<group>"; };
 		D055CFB22674F29700280D89 /* RecommendMajorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMajorCell.swift; sourceTree = "<group>"; };
+		D08CA28F2678E8520016305F /* TurtorialMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtorialMessageCell.swift; sourceTree = "<group>"; };
 		D09C7A7726691A0F0018C280 /* MainScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainScreens.storyboard; path = Storyboard/MainScreens.storyboard; sourceTree = "<group>"; };
 		D09C7A7826691A0F0018C280 /* CourseScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CourseScreens.storyboard; path = Storyboard/CourseScreens.storyboard; sourceTree = "<group>"; };
 		D09C7A7926691A0F0018C280 /* RegisterCourse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RegisterCourse.storyboard; path = Storyboard/RegisterCourse.storyboard; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 			children = (
 				D0AF9F362675F3D0009AED14 /* ReceiveMessageCell.swift */,
 				D0AF9F3A2675FB70009AED14 /* SendMessageCell.swift */,
+				D08CA28F2678E8520016305F /* TurtorialMessageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1003,6 +1006,7 @@
 				04AF6E4D25EA104F0092429E /* DateEntity.swift in Sources */,
 				04A1C92825F0B7B800D270A1 /* Course.swift in Sources */,
 				0499142F26131D38005E3726 /* UIImageExtensions.swift in Sources */,
+				D08CA2902678E8520016305F /* TurtorialMessageCell.swift in Sources */,
 				D0111B602676156300458D1E /* DBManager.swift in Sources */,
 				D055CFB32674F29700280D89 /* RecommendMajorCell.swift in Sources */,
 				04D648A525EE3C89007D43AF /* TabBarController.swift in Sources */,

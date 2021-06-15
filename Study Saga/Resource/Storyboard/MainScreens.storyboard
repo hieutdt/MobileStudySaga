@@ -376,7 +376,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFu-Rm-TiT" customClass="BaseButton" customModule="Study_Saga" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="440" width="428" height="60"/>
+                                        <rect key="frame" x="0.0" y="480" width="428" height="60"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="yy0-vw-7Sn"/>
@@ -395,17 +395,28 @@
                                             <constraint firstAttribute="height" constant="60" id="d5S-aX-kJQ"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZQ-VC-SC4" customClass="BaseButton" customModule="Study_Saga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="400" width="428" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="aIO-Yv-TPT"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="cBq-O8-btx" firstAttribute="leading" secondItem="syJ-iv-hbG" secondAttribute="leading" id="3ba-s2-Hs2"/>
+                                    <constraint firstAttribute="trailing" secondItem="0ZQ-VC-SC4" secondAttribute="trailing" id="4T7-ta-fjU"/>
+                                    <constraint firstItem="0ZQ-VC-SC4" firstAttribute="leading" secondItem="syJ-iv-hbG" secondAttribute="leading" id="4wI-lq-QTf"/>
                                     <constraint firstAttribute="trailing" secondItem="aDM-qM-hg9" secondAttribute="trailing" id="5mu-1b-0xz"/>
+                                    <constraint firstItem="0ZQ-VC-SC4" firstAttribute="top" secondItem="aDM-qM-hg9" secondAttribute="bottom" id="9Ia-lv-zxN"/>
                                     <constraint firstAttribute="trailing" secondItem="OFu-Rm-TiT" secondAttribute="trailing" id="BYk-vZ-j6F"/>
                                     <constraint firstItem="U48-AU-tPM" firstAttribute="leading" secondItem="syJ-iv-hbG" secondAttribute="leading" id="DIy-QC-NUi"/>
                                     <constraint firstAttribute="trailing" secondItem="cBq-O8-btx" secondAttribute="trailing" id="MsF-3a-cae"/>
                                     <constraint firstItem="l1h-Fq-oeW" firstAttribute="top" secondItem="cBq-O8-btx" secondAttribute="bottom" id="PDD-ML-vEH"/>
                                     <constraint firstItem="cBq-O8-btx" firstAttribute="top" secondItem="U48-AU-tPM" secondAttribute="bottom" id="Y8F-cP-Lea"/>
                                     <constraint firstItem="l1h-Fq-oeW" firstAttribute="leading" secondItem="syJ-iv-hbG" secondAttribute="leading" id="dQI-v4-fFR"/>
+                                    <constraint firstItem="OFu-Rm-TiT" firstAttribute="top" secondItem="0ZQ-VC-SC4" secondAttribute="bottom" constant="20" id="eZP-7Q-Tt2"/>
                                     <constraint firstItem="U48-AU-tPM" firstAttribute="top" secondItem="hZF-uZ-6xI" secondAttribute="bottom" constant="20" id="gfM-Gs-i0V"/>
                                     <constraint firstItem="aDM-qM-hg9" firstAttribute="top" secondItem="l1h-Fq-oeW" secondAttribute="bottom" id="h9c-uP-BlK"/>
                                     <constraint firstItem="hZF-uZ-6xI" firstAttribute="leading" secondItem="syJ-iv-hbG" secondAttribute="leading" id="iDQ-AH-Yaf"/>
@@ -415,7 +426,6 @@
                                     <constraint firstItem="wfn-MZ-j5S" firstAttribute="leading" secondItem="syJ-iv-hbG" secondAttribute="leading" id="nk8-XL-gAO"/>
                                     <constraint firstAttribute="trailing" secondItem="U48-AU-tPM" secondAttribute="trailing" id="q3i-Hc-DaG"/>
                                     <constraint firstItem="OFu-Rm-TiT" firstAttribute="leading" secondItem="syJ-iv-hbG" secondAttribute="leading" id="qeH-YF-ZuI"/>
-                                    <constraint firstItem="OFu-Rm-TiT" firstAttribute="top" secondItem="aDM-qM-hg9" secondAttribute="bottom" constant="40" id="vq6-T7-VyF"/>
                                     <constraint firstAttribute="trailing" secondItem="wfn-MZ-j5S" secondAttribute="trailing" id="xka-IY-TpB"/>
                                     <constraint firstItem="hZF-uZ-6xI" firstAttribute="top" secondItem="syJ-iv-hbG" secondAttribute="top" id="yEc-Zv-rda"/>
                                     <constraint firstAttribute="trailing" secondItem="l1h-Fq-oeW" secondAttribute="trailing" id="zrW-Pj-wg6"/>
@@ -437,6 +447,7 @@
                         <outlet property="contentView" destination="syJ-iv-hbG" id="Gwy-Jt-aQT"/>
                         <outlet property="courseHistoryButton" destination="cBq-O8-btx" id="Jsm-XG-Pg3"/>
                         <outlet property="editProfileButton" destination="U48-AU-tPM" id="vyU-VG-Uff"/>
+                        <outlet property="fileManagerButton" destination="0ZQ-VC-SC4" id="Dlb-2A-4Je"/>
                         <outlet property="headerContainer" destination="hZF-uZ-6xI" id="omm-S7-5I2"/>
                         <outlet property="logOutButton" destination="OFu-Rm-TiT" id="8Za-8w-VII"/>
                         <outlet property="registerCourseHIstoryButton" destination="aDM-qM-hg9" id="nbC-iB-VGP"/>
@@ -1090,6 +1101,9 @@
         <image name="set_up_zoom_bg" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
