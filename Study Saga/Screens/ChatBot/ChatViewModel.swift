@@ -7,11 +7,13 @@
 
 import Foundation
 import Combine
-
+import Alamofire
 
 class ChatViewModel: ObservableObject {
     
     @Published var messages: [Message] = []
+    
+    var messageDidAdd = PassthroughSubject<Message, Never>()
     
     init() {
         for _ in 0...100 {
@@ -61,5 +63,67 @@ class ChatViewModel: ObservableObject {
         }
         
         self.groupMessages()
+    }
+    
+    func sendMessage(_ message: String) {
+        // Update UI first
+        let user = AccountManager.manager.loggedInUser!
+        var messageModel = Message(messageId: UUID().uuidString,
+                                   roomId: UUID().uuidString,
+                                   fromId: user.id,
+                                   toIDs: [],
+                                   message: message,
+                                   avatarUrl: "",
+                                   name: user.name)
+        messageModel.type = .text
+        
+        self.messages.insert(messageModel, at: 0)
+        self.messageDidAdd.send(messageModel)
+        
+        // Send request
+        guard let token = AccountManager.manager.cachingToken else {
+            return
+        }
+        
+        let url = "\(kDomain)/api/rasa/chatbot"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token)",
+            "Accept": "*/*"
+        ]
+        
+        let params = [
+            "message": message
+        ]
+        
+        // Send request.
+        AF.request(
+            url,
+            method: .post,
+            parameters: params,
+            encoder: JSONParameterEncoder.default,
+            headers: headers) { urlRequest in
+            urlRequest.timeoutInterval = 15
+            urlRequest.allowsConstrainedNetworkAccess = true
+        }
+        .responseJSON { response in
+            if let value = response.value as? [String: Any] {
+                
+                let data = value.arrayDictForKey("data")
+                if !data.isEmpty {
+                    let dataDict = data[0]
+                    let responeText = dataDict.stringValueForKey("text")
+                    var repMessage = Message(messageId: UUID().uuidString,
+                                             roomId: UUID().uuidString,
+                                             fromId: "Bot",
+                                             toIDs: [],
+                                             message: responeText,
+                                             avatarUrl: "",
+                                             name: "Bot")
+                    repMessage.groupState.insert(.top)
+                    self.messages.insert(repMessage, at: 0)
+                    self.messageDidAdd.send(repMessage)
+                }
+            }
+        }
     }
 }
