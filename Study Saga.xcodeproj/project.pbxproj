@@ -95,6 +95,11 @@
 		D0111B6326763B9E00458D1E /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0111B6226763B9E00458D1E /* DocumentsViewController.swift */; };
 		D01462F82674FB10007639A0 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01462F72674FB10007639A0 /* Major.swift */; };
 		D01462FA26750AB5007639A0 /* MajorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01462F926750AB5007639A0 /* MajorInfoViewController.swift */; };
+		D022B2F8267F7CB10063EA86 /* FeedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022B2F7267F7CB10063EA86 /* FeedCollectionCell.swift */; };
+		D022B2FA267F81C20063EA86 /* FeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022B2F9267F81C20063EA86 /* FeedsView.swift */; };
+		D022B2FC267F84C50063EA86 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022B2FB267F84C50063EA86 /* FeedModel.swift */; };
+		D022B2FE267F94DC0063EA86 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D022B2FD267F94DC0063EA86 /* WebKit.framework */; };
+		D022B301267F94FE0063EA86 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022B300267F94FE0063EA86 /* WebViewController.swift */; };
 		D0251B412659254200A23106 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B402659254200A23106 /* DateExtensions.swift */; };
 		D0251B4326592B4600A23106 /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0251B4226592B4600A23106 /* MonthYearPicker.swift */; };
 		D0251B452659441F00A23106 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0251B442659441F00A23106 /* EventKit.framework */; };
@@ -254,6 +259,11 @@
 		D0111B6226763B9E00458D1E /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		D01462F72674FB10007639A0 /* Major.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major.swift; sourceTree = "<group>"; };
 		D01462F926750AB5007639A0 /* MajorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorInfoViewController.swift; sourceTree = "<group>"; };
+		D022B2F7267F7CB10063EA86 /* FeedCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionCell.swift; sourceTree = "<group>"; };
+		D022B2F9267F81C20063EA86 /* FeedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsView.swift; sourceTree = "<group>"; };
+		D022B2FB267F84C50063EA86 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		D022B2FD267F94DC0063EA86 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D022B300267F94FE0063EA86 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D0251B402659254200A23106 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		D0251B4226592B4600A23106 /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPicker.swift; sourceTree = "<group>"; };
 		D0251B442659441F00A23106 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -291,6 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D022B2FE267F94DC0063EA86 /* WebKit.framework in Frameworks */,
 				3A335CC880F263A53E737774 /* Pods_Study_Saga.framework in Frameworks */,
 				D0251B452659441F00A23106 /* EventKit.framework in Frameworks */,
 				D0C459B3266B78BC0053281C /* PDFKit.framework in Frameworks */,
@@ -464,6 +475,7 @@
 				0401C9D12622862B00259402 /* Subject.swift */,
 				D01462F72674FB10007639A0 /* Major.swift */,
 				D0AF9F382675F416009AED14 /* Message.swift */,
+				D022B2FB267F84C50063EA86 /* FeedModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +511,7 @@
 			children = (
 				04AF6E6D25EA275E0092429E /* DeadlineTableCell.swift */,
 				04C1A67525EF3ECC003A7AAA /* ScheduleTableCell.swift */,
+				D055CFB22674F29700280D89 /* RecommendMajorCell.swift */,
 				04A1C92225F0924400D270A1 /* CourseTableCell.swift */,
 				047832AE25F60B8B001DE828 /* LessonCollectionCell.swift */,
 				0486516125FA6B0900F28579 /* DocumentTableCell.swift */,
@@ -507,6 +520,7 @@
 				04E33EB7262494A800D0E30A /* ConfirmRegisterCourseCell.swift */,
 				D007C0E42675AA50005FFF28 /* RecommendTableCell.swift */,
 				D0A4105226778CA900D01925 /* DBDocumentCell.swift */,
+				D022B2F7267F7CB10063EA86 /* FeedCollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -592,6 +606,7 @@
 		04DB50E725E4A935004B4C9C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D022B2FF267F94F60063EA86 /* WebView */,
 				D0111B6126763B8D00458D1E /* Document */,
 				D0AF9F332675F3A8009AED14 /* ChatBot */,
 				D09C7A80266928C20018C280 /* Notification */,
@@ -612,7 +627,7 @@
 				04D648A425EE3C89007D43AF /* TabBarController.swift */,
 				043549162609D0AF00F75F51 /* LaunchViewController.swift */,
 				D055CFAE2674B4CD00280D89 /* RecommendCourseView.swift */,
-				D055CFB22674F29700280D89 /* RecommendMajorCell.swift */,
+				D022B2F9267F81C20063EA86 /* FeedsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -648,6 +663,7 @@
 		A2F7F88E607B7D36E5D6BDC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D022B2FD267F94DC0063EA86 /* WebKit.framework */,
 				D0AF9F4326760F28009AED14 /* CoreData.framework */,
 				D0C459B2266B78BC0053281C /* PDFKit.framework */,
 				D0251B442659441F00A23106 /* EventKit.framework */,
@@ -664,6 +680,14 @@
 				D0111B6226763B9E00458D1E /* DocumentsViewController.swift */,
 			);
 			path = Document;
+			sourceTree = "<group>";
+		};
+		D022B2FF267F94F60063EA86 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				D022B300267F94FE0063EA86 /* WebViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		D09C7A80266928C20018C280 /* Notification */ = {
@@ -954,6 +978,7 @@
 				04634E6725E4AE2200A3797B /* UIColorExtensions.swift in Sources */,
 				0481EA3325E65A2A00FA568C /* DictionaryExtensions.swift in Sources */,
 				046659BC26158CC2004499CC /* LessonManager.swift in Sources */,
+				D022B2FA267F81C20063EA86 /* FeedsView.swift in Sources */,
 				04AF6E6825EA24940092429E /* AppNavigation.swift in Sources */,
 				D09C7A8826692FFC0018C280 /* NotificationViewModel.swift in Sources */,
 				049B0E1F261DA87200272C05 /* DeadlineViewController.swift in Sources */,
@@ -983,6 +1008,7 @@
 				04AF6E3125EA05410092429E /* HomeWeekBar.swift in Sources */,
 				0485750126248C4900821BCC /* ConfirmRegisterViewController.swift in Sources */,
 				044579EB2605A94A00D5365C /* NetworkManager.swift in Sources */,
+				D022B2F8267F7CB10063EA86 /* FeedCollectionCell.swift in Sources */,
 				04894FEC25ECE82C0069C559 /* UIButtonExtensions.swift in Sources */,
 				049B0E23261DB24400272C05 /* FileLinkTableCell.swift in Sources */,
 				D055CFAF2674B4CD00280D89 /* RecommendCourseView.swift in Sources */,
@@ -1001,6 +1027,7 @@
 				D01462FA26750AB5007639A0 /* MajorInfoViewController.swift in Sources */,
 				0489500125ED2B520069C559 /* DampingButton.swift in Sources */,
 				040306B525FB73D40058A6CD /* CheckInViewController.swift in Sources */,
+				D022B2FC267F84C50063EA86 /* FeedModel.swift in Sources */,
 				042A66A125F8BBC60084629F /* JoinMeetingViewController.swift in Sources */,
 				0489501C25ED43590069C559 /* BaseButton.swift in Sources */,
 				04AF6E4D25EA104F0092429E /* DateEntity.swift in Sources */,
@@ -1044,6 +1071,7 @@
 				0415EC4626009B4700195246 /* ZoomSettingViewController.swift in Sources */,
 				04C1A67B25EF7783003A7AAA /* ScheduleViewModel.swift in Sources */,
 				D09C7A86266929BA0018C280 /* NotificationModel.swift in Sources */,
+				D022B301267F94FE0063EA86 /* WebViewController.swift in Sources */,
 				D0AF9F372675F3D0009AED14 /* ReceiveMessageCell.swift in Sources */,
 				043F2225260B2A790099A704 /* RegisterCourseViewController.swift in Sources */,
 				D0AF9F352675F3B9009AED14 /* ChatViewController.swift in Sources */,

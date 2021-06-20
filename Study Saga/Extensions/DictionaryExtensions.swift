@@ -81,6 +81,14 @@ extension Dictionary where Key == String {
         }
     }
     
+    func doubleForKey(_ key: String) -> Double {
+        if let value = self[key] as? Double {
+            return value
+        } else {
+            return 0
+        }
+    }
+    
     func JSON() -> String {
         if let theJSONData = try? JSONSerialization.data(
             withJSONObject: self,

@@ -236,4 +236,47 @@ class CoursesManager: NSObject, ObservableObject {
             }
         }
     }
+    
+    func getNewFeeds(_ completion: @escaping ([FeedModel]) -> Void) {
+        guard let token = AccountManager.manager.cachingToken else {
+            completion([])
+            return
+        }
+        
+        let url = "\(kDomain)/api/feednew"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token)",
+            "Accept": "*/*"
+        ]
+        
+        AF.request(
+            url,
+            method: .get,
+            parameters: [:],
+            encoding: URLEncoding.default,
+            headers: headers) { urlRequest in
+            urlRequest.timeoutInterval = 30
+            urlRequest.allowsConstrainedNetworkAccess = true
+        }
+        .responseJSON { response in
+            if let value = response.value as? [String: Any] {
+                let status = value.intValueForKey("response_code")
+                if status == RESPONSE_STATUS_OK {
+                    let data = value.arrayDictForKey("data")
+                    var results: [FeedModel] = []
+                    for dict in data {
+                        let feedModel = FeedModel(json: dict)
+                        results.append(feedModel)
+                    }
+                    
+                    completion(results)
+                    
+                } else {
+                    completion([])
+                }
+            } else {
+                completion([])
+            }
+        }
+    }
 }

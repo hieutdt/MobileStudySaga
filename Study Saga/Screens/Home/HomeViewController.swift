@@ -10,6 +10,7 @@ import UIKit
 import Combine
 import AlamofireImage
 import SkeletonView
+import WebKit
 
 let kMaxDeadlinesToShow: Int = 3
 
@@ -42,6 +43,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var openCourseDummyButton: UIButton!
     
     @IBOutlet weak var recommendCourseView: RecommendCourseView!
+    @IBOutlet weak var feedsView: FeedsView!
     
     var headerGradient = UIView()
     weak var headerGradientHeight: NSLayoutConstraint? = nil
@@ -98,6 +100,12 @@ class HomeViewController: UIViewController {
         self.viewModel.fetchRecommendMajors {
             self.recommendCourseView.hideSkeleton()
             self.recommendCourseView.courses = self.viewModel.majors
+        }
+        
+        self.feedsView.showAnimatedGradientSkeleton()
+        self.viewModel.fetchNewFeeds {
+            self.feedsView.hideSkeleton()
+            self.feedsView.models = self.viewModel.feeds
         }
     }
     
@@ -219,6 +227,9 @@ class HomeViewController: UIViewController {
         
         self.recommendCourseView.backgroundColor = .white
         self.recommendCourseView.delegate = self
+        
+        self.feedsView.backgroundColor = .white
+        self.feedsView.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -419,6 +430,16 @@ extension HomeViewController: RecommendCourseViewDelegate {
         let vc = MajorInfoVIewController()
         vc.modalPresentationStyle = .fullScreen
         vc.major = major
+        self.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension HomeViewController: FeedsViewDelegate {
+    
+    func didSelectFeed(_ feed: FeedModel) {
+        let vc = WebViewController()
+        vc.feed = feed
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
 }

@@ -15,6 +15,7 @@ class HomeViewModel: NSObject, ObservableObject {
     @Published var deadlines: [Deadline] = []
     @Published var comingLesson: Lesson?
     @Published var majors: [Major] = []
+    @Published var feeds: [FeedModel] = []
     
     var cancellables = Set<AnyCancellable>()
     
@@ -78,6 +79,13 @@ class HomeViewModel: NSObject, ObservableObject {
     func fetchRecommendMajors(_ completion: @escaping () -> Void) {
         CoursesManager.manager.getRecommendMajors { majors in
             self.majors = majors
+            completion()
+        }
+    }
+    
+    func fetchNewFeeds(_ completion: @escaping () -> Void) {
+        CoursesManager.manager.getNewFeeds { feeds in
+            self.feeds = feeds
             completion()
         }
     }
